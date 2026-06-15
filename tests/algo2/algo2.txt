@@ -1,0 +1,11 @@
+VARIABLE sum
+VARIABLE square_sum
+101 1
+do
+    sum @ I + sum !
+    square_sum @ I I * + square_sum !
+    1
+loop
+sum @ sum @ *
+square_sum @ -
+.

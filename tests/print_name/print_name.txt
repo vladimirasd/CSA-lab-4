@@ -1,0 +1,25 @@
+: print_word
+1 -
+begin
+    1 + DUP @ 255 &
+    DUP 0 !=
+    if
+        DUP emit
+    then
+    0 =
+until
+ ;
+"What is your name?"
+print_word
+10 emit
+CREATE name 30
+SWAP
+1 -
+begin
+    1 +
+    DUP key SWAP ! DUP  @ 255 & 0 =
+until
+"Hello, "
+print_word
+name
+print_word

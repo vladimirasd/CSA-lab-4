@@ -1,0 +1,10 @@
+"Hello, World!"
+1 -
+begin
+    1 + DUP @ 255 &
+    DUP 0 !=
+    if
+        DUP emit
+    then
+    0 =
+until
