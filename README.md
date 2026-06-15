@@ -465,9 +465,10 @@ Commit
 ## Внутренняя организация
 
 ### DataPath
+![https://raw.githubusercontent.com/username/projectname/commit/img.png](https://raw.githubusercontent.com/vladimirasd/CSA-lab-4/480f5b04b08e15a4b0fb7ed4c74150ecd14ceb6e/VM/DataPath.drawio.png)
 
 ### Control unit
-
+![https://raw.githubusercontent.com/vladimirasd/CSA-lab-4/480f5b04b08e15a4b0fb7ed4c74150ecd14ceb6e/VM/DataPath.drawio.png](https://raw.githubusercontent.com/vladimirasd/CSA-lab-4/480f5b04b08e15a4b0fb7ed4c74150ecd14ceb6e/VM/CU.drawio%20(4).png)
 ### Симуляция
 
 Происходит потактово. Всего 5 ( + остановка) состояний между которыми происходит переключение. 
