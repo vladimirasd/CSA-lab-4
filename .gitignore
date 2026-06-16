@@ -1,0 +1,19 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# IDE (PyCharm/IntelliJ)
+.idea/
+*.iml
+
+# Временные файлы
+*.log
+*.bin
+*.lst
+*.hex
+program_log
+program.bin
+program.lst
