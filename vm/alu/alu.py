@@ -382,10 +382,8 @@ class Alu:
 
     def _get_shift_amount(self):
         shift_val = self._right.get()
-        if len(shift_val) >= 5:
-            shift = self._bits_to_unsigned_int(shift_val[:5])
-        else:
-            shift = self._bits_to_unsigned_int(shift_val)
+        shift = self._bits_to_unsigned_int(shift_val[:5]) if len(shift_val) >= 5 else self._bits_to_unsigned_int(
+            shift_val)
         return shift % 32
 
     def _bits_to_int(self, bits):

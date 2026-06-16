@@ -1,14 +1,14 @@
 import struct
 
-from VM.ALU.alu import Alu
-from VM.CU.control_unit import CU
-from VM.CU.ROB import ROB
-from VM.CU.RS import RS
-from VM.IO.inputinterface import InputInterface
-from VM.IO.outputinterface import OutputInterface
-from VM.MEM.memory import Memory
-from VM.MEM.mux import Mux
-from VM.MEM.registers import (
+from vm.alu.alu import Alu
+from vm.cu.control_unit import CU
+from vm.cu.rob import ROB
+from vm.cu.rs import RS
+from vm.io.inputinterface import InputInterface
+from vm.io.outputinterface import OutputInterface
+from vm.mem.memory import Memory
+from vm.mem.mux import Mux
+from vm.mem.registers import (
     AdressRegister,
     DataRegister,
     ImmRegister,
@@ -132,7 +132,7 @@ class CPU:
             rob=self._rob,
             rs=self._rs,
             log_file=log_file,
-            log_level=log_level
+            log_level=log_level,
         )
 
         self._data_registers["x27"]._value = [0, 0, 1, 0, 0, 1, 0, 1] + 24 * [0]
@@ -203,10 +203,7 @@ class CPU:
                 for i in data:
                     tick, ch = i.split()
                     tick = int(tick)
-                    if ch[0] != "\\":
-                        ch = self.int_to_bits(ord(ch), 8)
-                    else:
-                        ch = self.int_to_bits(int(ch[1:]))
+                    ch = self.int_to_bits(ord(ch), 8) if ch[0] != "\\" else self.int_to_bits(int(ch[1:]))
                     self._i0.add(tick, ch)
 
     def _connect_registers(self):

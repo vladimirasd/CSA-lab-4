@@ -1,4 +1,4 @@
-from VM.MEM.registers import RobCounter
+from vm.mem.registers import RobCounter
 
 
 class ROBEntry:

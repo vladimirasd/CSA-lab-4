@@ -24,7 +24,7 @@ class CU:
         rob,
         rs,
         log_file=None,
-        log_level = 3
+        log_level=3,
     ):
         self._registers = registers
         self._dr = dr
@@ -64,10 +64,10 @@ class CU:
         self.log_file = log_file
         self.log_level = log_level
 
-
     def log(self, str, log_level):
-        if(self.log_level >= log_level):
+        if self.log_level >= log_level:
             print(str, file=self.log_file)
+
     def handle_interrupts(self):
         self.log("===========INTER===========", 3)
         self._state = 0
@@ -83,9 +83,7 @@ class CU:
                     if self._rob.free_slots() == 8 and self._rs.free_slots() == 8:
                         self._state = 4
                         if self._to_trap_state == 0:
-                            self.log(
-                                f"PC BEFORE TRAP {self.to_int(self._pc._value)}", 3
-                            )
+                            self.log(f"PC BEFORE TRAP {self.to_int(self._pc._value)}", 3)
                             self.log(self._alu1._left.set("x31"), 3)
                             self.log(self._alu1.decrement(), 3)
                             self._to_trap_state += 1
@@ -97,7 +95,7 @@ class CU:
                             self.log(self._ar.set(self._alu1._name), 3)
                             self.log(self._alu1._left.set(self._pc._name), 3)
                             self.log(self._alu1.pass_value(), 3)
-                            self.log(self._dr.set(self._alu1._name),3)
+                            self.log(self._dr.set(self._alu1._name), 3)
                             self.log(self._mem.set(), 3)
                             self._to_trap_state += 1
 

@@ -1,4 +1,4 @@
-from VM.MEM.registers import RsCounter
+from vm.mem.registers import RsCounter
 
 
 class RSEntry:
@@ -105,7 +105,6 @@ class RS:
             if e.valid == [0]:
                 free += 1
         return free
-
 
     def broadcast(self, rob_tag, value, log_file, mem_tag=None):
         if len(value) < 32:

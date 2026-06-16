@@ -3,7 +3,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from VM.CPU import CPU
+from vm.cpu import CPU
 
 
 def big_to_bits(n):
@@ -27,13 +27,7 @@ def run_vm(bin_file, pc, input_file=None, log_level=3):
     for _ in range(len(actual_pc), 32):
         actual_pc += [0]
     with open(bin_file[:-4] + "_log", "w", encoding="utf-8") as log_file:
-        cpu = CPU(
-            bin_file,
-            actual_pc,
-            input_file,
-            log_file,
-            log_level
-        )
+        cpu = CPU(bin_file, actual_pc, input_file, log_file, log_level)
 
         try:
             cpu.run()
@@ -67,8 +61,11 @@ def main():
         "-i", "--input", dest="input_file", help="Файл для ввода данных (по умолчанию None)"
     )
     parser.add_argument(
-        "--log-level", type=int, choices=[1, 2, 3], default=3,
-        help="Уровень детализации логирования: 1 — вывод и такты, 2 — исполнение, 3 — полная трассировка (по умолчанию 0 — логи отключены)"
+        "--log-level",
+        type=int,
+        choices=[1, 2, 3],
+        default=3,
+        help="Уровень детализации логирования: 1 — вывод и такты, 2 — исполнение, 3 — полная трассировка (по умолчанию 0 — логи отключены)",
     )
 
     args = parser.parse_args()
