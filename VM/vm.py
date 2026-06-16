@@ -19,7 +19,7 @@ def to_bits(n):
     return [n >> i & 1 for i in range(0, 8)]
 
 
-def run_vm(bin_file, pc, input_file=None):
+def run_vm(bin_file, pc, input_file=None, log_level=3):
     actual_pc = []
     for i in bin(pc)[2:]:
         actual_pc.append(int(i))
@@ -32,6 +32,7 @@ def run_vm(bin_file, pc, input_file=None):
             actual_pc,
             input_file,
             log_file,
+            log_level
         )
 
         try:
@@ -66,8 +67,8 @@ def main():
         "-i", "--input", dest="input_file", help="Файл для ввода данных (по умолчанию None)"
     )
     parser.add_argument(
-        "--log-level", type=int, choices=[1, 2, 3], default=0,
-        help="Уровень детализации логирования: 1 — только ошибки, 2 — важные события, 3 — полная трассировка (по умолчанию 0 — логи отключены)"
+        "--log-level", type=int, choices=[1, 2, 3], default=3,
+        help="Уровень детализации логирования: 1 — вывод и такты, 2 — исполнение, 3 — полная трассировка (по умолчанию 0 — логи отключены)"
     )
 
     args = parser.parse_args()

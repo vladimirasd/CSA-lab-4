@@ -1,2 +1,0 @@
-: print_ten 10 . ;
-' print_ten execute

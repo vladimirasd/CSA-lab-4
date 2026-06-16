@@ -1,0 +1,979 @@
+in_source: |
+  : print_ten 10 . ;
+  ' print_ten execute
+in_stdin: ''
+log_level: 3
+out_code_base64: 
+  BAAAAEBCAABigE4A5I4eAGPEvgHkDh0A86IPAOSPTwB8ggIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADkj8//YqAfAIAAAADggMAAAKEAAOaAIABkD8//YiAfAPMgDwBkD08AQYAAAPOgDwDkj08AeIEAAIAAAADggMAAAEEKAOaAIABkD8//YiAfAHMhDwBkD08A+AABAH8AAAA=
+out_code: |
+  0 - 00000004 - data
+  4 - 00004240 - input x4 x0
+  8 - 004E8062 - sb x4, 0(x29)
+  12 - 001E8EE4 - addi x29, x29, 1
+  16 - 01BEC463 - bgt  x29, x27, 8
+  20 - 001D0EE4 - addi x29, x26, 1
+  24 - 000FA2F3 - lw  x5, 0(x31)
+  28 - 004F8FE4 - addi x31, x31, 4
+  32 - 0002827C - jalri x4, x5, 0
+  36 - 00000000 - lui x0, 0x0
+  40 - 00000000 - lui x0, 0x0
+  44 - 00000000 - lui x0, 0x0
+  48 - 00000000 - lui x0, 0x0
+  52 - 00000000 - lui x0, 0x0
+  56 - 00000000 - lui x0, 0x0
+  60 - 00000000 - lui x0, 0x0
+  64 - 00000000 - lui x0, 0x0
+  68 - 00000000 - lui x0, 0x0
+  72 - 00000000 - lui x0, 0x0
+  76 - 00000000 - lui x0, 0x0
+  80 - 00000000 - lui x0, 0x0
+  84 - 00000000 - lui x0, 0x0
+  88 - 00000000 - lui x0, 0x0
+  92 - 00000000 - lui x0, 0x0
+  96 - 00000000 - lui x0, 0x0
+  100 - 00000000 - lui x0, 0x0
+  104 - 00000000 - lui x0, 0x0
+  108 - 00000000 - lui x0, 0x0
+  112 - 00000000 - lui x0, 0x0
+  116 - 00000000 - lui x0, 0x0
+  120 - 00000000 - lui x0, 0x0
+  124 - 00000000 - lui x0, 0x0
+  128 - 00000000 - lui x0, 0x0
+  132 - 00000000 - lui x0, 0x0
+  136 - 00000000 - lui x0, 0x0
+  140 - 00000000 - lui x0, 0x0
+  144 - 00000000 - lui x0, 0x0
+  148 - 00000000 - lui x0, 0x0
+  152 - 00000000 - lui x0, 0x0
+  156 - 00000000 - lui x0, 0x0
+  160 - 00000000 - lui x0, 0x0
+  164 - FFCF8FE4 - addi x31, x31, -4
+  168 - 001FA062 - sw x1, 0(x31)
+  172 - 00000080 - lui x1, 0x0
+  176 - 00C080E0 - slli x1, x1, 12
+  180 - 0000A100 - lui x2, 0xa
+  184 - 002080E6 - add x1, x1, x2
+  188 - FFCF0F64 - addi x30, x30, -4
+  192 - 001F2062 - sw x1, 0(x30)
+  196 - 000F20F3 - lw  x1, 0(x30)
+  200 - 004F0F64 - addi x30, x30, 4
+  204 - 00008041 - print_word x0 x1
+  208 - 000FA0F3 - lw  x1, 0(x31)
+  212 - 004F8FE4 - addi x31, x31, 4
+  216 - 00008178 - jalr x2, x1, 0
+  220 - 00000080 - lui x1, 0x0
+  224 - 00C080E0 - slli x1, x1, 12
+  228 - 000A4100 - lui x2, 0xa4
+  232 - 002080E6 - add x1, x1, x2
+  236 - FFCF0F64 - addi x30, x30, -4
+  240 - 001F2062 - sw x1, 0(x30)
+  244 - 000F2173 - lw  x2, 0(x30)
+  248 - 004F0F64 - addi x30, x30, 4
+  252 - 000100F8 - jalr x1, x2, 0
+  256 - 0000007F - halt
+out_stdout: |2+
+
+out_log: |2
+
+  === TICK 0 ===
+  ===========DUMP===========
+  ROB:
+  RS:
+   reg : x1 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194304 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388608 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=0
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: []
+
+  === TICK 1 ===
+  ===========COMMIT===========
+
+  === TICK 2 ===
+  ===========FETCH===========
+  ROB SLOTS=8, RS SLOTS=8
+  IR 1: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 2: [0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 3 ===
+  ===========ISSUE===========
+  ISSUE: pc=220 opcode=[0, 0, 0, 0, 0, 0, 0] rd=1 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=0 is_halt=0
+
+  === TICK 4 ===
+  ===========ISSUE===========
+  ISSUE: pc=224 opcode=[0, 0, 0, 0, 0, 1, 1] rd=1 rs1=1 op1_ready=[0] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=1 is_halt=0
+
+  === TICK 5 ===
+  ===========ISSUE===========
+  ISSUE: pc=228 opcode=[0, 0, 0, 0, 0, 0, 0] rd=2 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=2 is_halt=0
+
+  === TICK 6 ===
+  ===========ISSUE===========
+  ISSUE: pc=232 opcode=[0, 1, 1, 0, 0, 1, 1] rd=1 rs1=1 op1_ready=[0] op1_tag=[1, 0, 0] rs2=2 op2_ready=[0] op2_tag=[0, 1, 0] rob_tag=3 is_halt=0
+
+  === TICK 7 ===
+  ===========INTER===========
+
+  === TICK 8 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 220
+    [1] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 224
+    [2] valid=1 ready=0 dest=x2 value=0 is_halt=0 is_store=0 pc = 228
+    [3] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 232
+  RS:
+    [0] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 220
+    [1] valid=1 op1_ready=0 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 224
+    [2] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 228
+    [3] valid=1 op1_ready=0 op1_tag=[1, 0, 0] op2_ready=0  op2_tag=[0, 1, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 232
+   reg : x1 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194304 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388608 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=0
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [0, 2]
+  EXEC: rob_tag=0 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 220
+  EXEC: rob_tag=2 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[0, 0, 1] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 228
+
+  === TICK 9 ===
+  ===========COMMIT===========
+  COMMIT: reg x1 value=0=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=220
+
+  === TICK 10 ===
+  ===========FETCH===========
+  ROB SLOTS=5, RS SLOTS=6
+  IR 1: [0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  IR 2: [0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 11 ===
+  ===========ISSUE===========
+  ISSUE: pc=236 opcode=[0, 0, 1, 0, 0, 1, 1] rd=30 rs1=30 op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=4 is_halt=0
+
+  === TICK 12 ===
+  ===========ISSUE===========
+  ISSUE: pc=240 opcode=[0, 1, 0, 0, 0, 1, 1] rd=0 rs1=30 op1_ready=[0] op1_tag=[0, 0, 1] rs2=1 op2_ready=[0] op2_tag=[1, 1, 0] rob_tag=5 is_halt=0
+
+  === TICK 13 ===
+  ===========ISSUE===========
+  ISSUE: pc=244 opcode=[1, 1, 0, 0, 1, 1, 1] rd=2 rs1=30 op1_ready=[0] op1_tag=[0, 0, 1] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=6 is_halt=0
+
+  === TICK 14 ===
+  ===========ISSUE===========
+  ISSUE: pc=248 opcode=[0, 0, 1, 0, 0, 1, 1] rd=30 rs1=30 op1_ready=[0] op1_tag=[0, 0, 1] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=7 is_halt=0
+
+  === TICK 15 ===
+  ===========INTER===========
+
+  === TICK 16 ===
+  ===========DUMP===========
+  ROB:
+    [1] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 224
+    [2] valid=1 ready=1 dest=x2 value=164 is_halt=0 is_store=0 pc = 228
+    [3] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 232
+    [4] valid=1 ready=0 dest=x30 value=0 is_halt=0 is_store=0 pc = 236
+    [5] valid=1 ready=0 dest=x0 value=0 is_halt=0 is_store=1 pc = 240
+    [6] valid=1 ready=0 dest=x2 value=0 is_halt=0 is_store=0 pc = 244
+    [7] valid=1 ready=0 dest=x30 value=0 is_halt=0 is_store=0 pc = 248
+  RS:
+    [0] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 236
+    [1] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 224
+    [2] valid=1 op1_ready=0 op1_tag=[0, 0, 1] op2_ready=0  op2_tag=[1, 1, 0]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 240
+    [3] valid=1 op1_ready=0 op1_tag=[1, 0, 0] op2_ready=1  op2_tag=[0, 1, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 232
+    [4] valid=1 op1_ready=0 op1_tag=[0, 0, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[0] mem_tag=[1, 0, 1] pc = 244
+    [5] valid=1 op1_ready=0 op1_tag=[0, 0, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 248
+   reg : x1 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194304 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388608 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=0
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [0, 1]
+  EXEC: rob_tag=4 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 236
+  EXEC: rob_tag=1 opcode=[0, 0, 0, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 224
+
+  === TICK 17 ===
+  ===========COMMIT===========
+  COMMIT: reg x1 value=0=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=224
+
+  === TICK 18 ===
+  ===========COMMIT===========
+  COMMIT: reg x2 value=164=[0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=228
+
+  === TICK 19 ===
+  ===========FETCH===========
+  ROB SLOTS=3, RS SLOTS=4
+  IR 1: [0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 2: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 20 ===
+  ===========ISSUE===========
+  ISSUE: pc=252 opcode=[0, 0, 0, 1, 1, 1, 1] rd=1 rs1=2 op1_ready=[0] op1_tag=[0, 1, 1] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=0 is_halt=0
+
+  === TICK 21 ===
+  ===========ISSUE===========
+  ISSUE: pc=256 opcode=[1, 1, 1, 1, 1, 1, 1] rd=0 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=1 is_halt=1
+
+  === TICK 22 ===
+  ===========ISSUE===========
+  ISSUE: pc=260 opcode=[1, 1, 1, 1, 1, 1, 1] rd=0 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=2 is_halt=1
+
+  === TICK 23 ===
+  ===========INTER===========
+
+  === TICK 24 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 252
+    [1] valid=1 ready=0 dest=x0 value=0 is_halt=1 is_store=0 pc = 256
+    [2] valid=1 ready=0 dest=x0 value=164 is_halt=1 is_store=0 pc = 260
+    [3] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 232
+    [4] valid=1 ready=1 dest=x30 value=4194300 is_halt=0 is_store=0 pc = 236
+    [5] valid=1 ready=0 dest=x0 value=0 is_halt=0 is_store=1 pc = 240
+    [6] valid=1 ready=0 dest=x2 value=0 is_halt=0 is_store=0 pc = 244
+    [7] valid=1 ready=0 dest=x30 value=0 is_halt=0 is_store=0 pc = 248
+  RS:
+    [0] valid=1 op1_ready=0 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 252
+    [1] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 256
+    [2] valid=1 op1_ready=1 op1_tag=[0, 0, 1] op2_ready=0  op2_tag=[1, 1, 0]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 240
+    [3] valid=1 op1_ready=1 op1_tag=[1, 0, 0] op2_ready=1  op2_tag=[0, 1, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 232
+    [4] valid=1 op1_ready=1 op1_tag=[0, 0, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[0] mem_tag=[1, 0, 1] pc = 244
+    [5] valid=1 op1_ready=1 op1_tag=[0, 0, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 248
+    [6] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 260
+   reg : x1 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 164 = [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194304 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388608 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=0
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [1, 3, 5, 6]
+  EXEC: rob_tag=1 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 256
+  HALT DETECTED
+  EXEC: rob_tag=3 opcode=[0, 1, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 232
+  EXEC: rob_tag=7 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 248
+  EXEC: rob_tag=2 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 260
+  HALT DETECTED
+
+  === TICK 25 ===
+  ===========COMMIT===========
+  COMMIT: reg x1 value=164=[0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=232
+
+  === TICK 26 ===
+  ===========COMMIT===========
+  COMMIT: reg x30 value=4194300=[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=236
+
+  === TICK 27 ===
+  ===========FETCH===========
+  ROB SLOTS=2, RS SLOTS=5
+  IR 1: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 2: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 28 ===
+  ===========ISSUE===========
+  ISSUE: pc=264 opcode=[1, 1, 1, 1, 1, 1, 1] rd=0 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=3 is_halt=1
+
+  === TICK 29 ===
+  ===========ISSUE===========
+  ISSUE: pc=268 opcode=[1, 1, 1, 1, 1, 1, 1] rd=0 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=4 is_halt=1
+
+  === TICK 30 ===
+  ===========INTER===========
+
+  === TICK 31 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 252
+    [1] valid=1 ready=1 dest=x0 value=0 is_halt=1 is_store=0 pc = 256
+    [2] valid=1 ready=1 dest=x0 value=164 is_halt=1 is_store=0 pc = 260
+    [3] valid=1 ready=0 dest=x0 value=164 is_halt=1 is_store=0 pc = 264
+    [4] valid=1 ready=0 dest=x0 value=4194300 is_halt=1 is_store=0 pc = 268
+    [5] valid=1 ready=0 dest=x0 value=0 is_halt=0 is_store=1 pc = 240
+    [6] valid=1 ready=0 dest=x2 value=0 is_halt=0 is_store=0 pc = 244
+    [7] valid=1 ready=1 dest=x30 value=4194304 is_halt=0 is_store=0 pc = 248
+  RS:
+    [0] valid=1 op1_ready=0 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 252
+    [1] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 264
+    [2] valid=1 op1_ready=1 op1_tag=[0, 0, 1] op2_ready=1  op2_tag=[1, 1, 0]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 240
+    [3] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 268
+    [4] valid=1 op1_ready=1 op1_tag=[0, 0, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[0] mem_tag=[1, 0, 1] pc = 244
+   reg : x1 state : 164 = [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 164 = [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194300 = [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388608 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=0
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [1, 2, 3]
+  EXEC: rob_tag=3 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 264
+  HALT DETECTED
+  EXEC: rob_tag=5 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 240
+  EXEC: rob_tag=4 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 268
+  HALT DETECTED
+
+  === TICK 32 ===
+  ===========COMMIT===========
+  COMMIT: store addr=4194300 data=164=[0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=240 
+
+  === TICK 33 ===
+  ===========FETCH===========
+  ROB SLOTS=1, RS SLOTS=6
+  IR 1: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 2: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 34 ===
+  ===========ISSUE===========
+  ISSUE: pc=272 opcode=[1, 1, 1, 1, 1, 1, 1] rd=0 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=5 is_halt=1
+
+  === TICK 35 ===
+  ===========INTER===========
+
+  === TICK 36 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 252
+    [1] valid=1 ready=1 dest=x0 value=0 is_halt=1 is_store=0 pc = 256
+    [2] valid=1 ready=1 dest=x0 value=164 is_halt=1 is_store=0 pc = 260
+    [3] valid=1 ready=1 dest=x0 value=164 is_halt=1 is_store=0 pc = 264
+    [4] valid=1 ready=1 dest=x0 value=4194300 is_halt=1 is_store=0 pc = 268
+    [5] valid=1 ready=0 dest=x0 value=0 is_halt=1 is_store=0 pc = 272
+    [6] valid=1 ready=0 dest=x2 value=0 is_halt=0 is_store=0 pc = 244
+    [7] valid=1 ready=1 dest=x30 value=4194304 is_halt=0 is_store=0 pc = 248
+  RS:
+    [0] valid=1 op1_ready=0 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 252
+    [1] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 272
+    [4] valid=1 op1_ready=1 op1_tag=[0, 0, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[1] mem_tag=[1, 0, 1] pc = 244
+   reg : x1 state : 164 = [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 164 = [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194300 = [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388608 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=164
+  mem[x30 + 4]=0
+  mem[x31]=0
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [1, 4]
+  EXEC: rob_tag=5 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 272
+  HALT DETECTED
+  EXEC: rob_tag=6 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 244
+
+  === TICK 37 ===
+  ===========COMMIT===========
+  COMMIT: load reg x2 value=164=[0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=244 
+
+  === TICK 38 ===
+  ===========COMMIT===========
+  COMMIT: reg x30 value=4194304=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=248
+
+  === TICK 39 ===
+  ===========FETCH===========
+  ROB SLOTS=2, RS SLOTS=7
+  IR 1: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 2: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 40 ===
+  ===========ISSUE===========
+  ISSUE: pc=276 opcode=[1, 1, 1, 1, 1, 1, 1] rd=0 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=6 is_halt=1
+
+  === TICK 41 ===
+  ===========ISSUE===========
+  ISSUE: pc=280 opcode=[1, 1, 1, 1, 1, 1, 1] rd=0 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=7 is_halt=1
+
+  === TICK 42 ===
+  ===========INTER===========
+
+  === TICK 43 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 252
+    [1] valid=1 ready=1 dest=x0 value=0 is_halt=1 is_store=0 pc = 256
+    [2] valid=1 ready=1 dest=x0 value=164 is_halt=1 is_store=0 pc = 260
+    [3] valid=1 ready=1 dest=x0 value=164 is_halt=1 is_store=0 pc = 264
+    [4] valid=1 ready=1 dest=x0 value=4194300 is_halt=1 is_store=0 pc = 268
+    [5] valid=1 ready=1 dest=x0 value=0 is_halt=1 is_store=0 pc = 272
+    [6] valid=1 ready=0 dest=x0 value=164 is_halt=1 is_store=0 pc = 276
+    [7] valid=1 ready=0 dest=x0 value=4194304 is_halt=1 is_store=0 pc = 280
+  RS:
+    [0] valid=1 op1_ready=1 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 252
+    [1] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 276
+    [2] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 280
+   reg : x1 state : 164 = [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 164 = [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194304 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388608 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=0
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [0, 1, 2]
+  EXEC: rob_tag=0 opcode=[0, 0, 0, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 252
+
+  === TICK 44 ===
+  ===========COMMIT===========
+  COMMIT: jalr pc=164
+  ===========FLUSH===========
+
+  === TICK 45 ===
+  ===========FETCH===========
+  ROB SLOTS=8, RS SLOTS=8
+  IR 1: [0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  IR 2: [0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 46 ===
+  ===========ISSUE===========
+  ISSUE: pc=164 opcode=[0, 0, 1, 0, 0, 1, 1] rd=31 rs1=31 op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=0 is_halt=0
+
+  === TICK 47 ===
+  ===========ISSUE===========
+  ISSUE: pc=168 opcode=[0, 1, 0, 0, 0, 1, 1] rd=0 rs1=31 op1_ready=[0] op1_tag=[0, 0, 0] rs2=1 op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=1 is_halt=0
+
+  === TICK 48 ===
+  ===========ISSUE===========
+  ISSUE: pc=172 opcode=[0, 0, 0, 0, 0, 0, 0] rd=1 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=2 is_halt=0
+
+  === TICK 49 ===
+  ===========ISSUE===========
+  ISSUE: pc=176 opcode=[0, 0, 0, 0, 0, 1, 1] rd=1 rs1=1 op1_ready=[0] op1_tag=[0, 1, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=3 is_halt=0
+
+  === TICK 50 ===
+  ===========INTER===========
+
+  === TICK 51 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=0 dest=x31 value=256 is_halt=0 is_store=0 pc = 164
+    [1] valid=1 ready=0 dest=x0 value=0 is_halt=0 is_store=1 pc = 168
+    [2] valid=1 ready=0 dest=x1 value=164 is_halt=0 is_store=0 pc = 172
+    [3] valid=1 ready=0 dest=x1 value=164 is_halt=0 is_store=0 pc = 176
+  RS:
+    [0] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 164
+    [1] valid=1 op1_ready=0 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 168
+    [2] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 172
+    [3] valid=1 op1_ready=0 op1_tag=[0, 1, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 176
+   reg : x1 state : 256 = [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 164 = [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194304 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388608 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=0
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [0, 2]
+  EXEC: rob_tag=0 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 164
+  EXEC: rob_tag=2 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 172
+
+  === TICK 52 ===
+  ===========COMMIT===========
+  COMMIT: reg x31 value=8388604=[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=164
+
+  === TICK 53 ===
+  ===========FETCH===========
+  ROB SLOTS=5, RS SLOTS=6
+  IR 1: [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 2: [0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  IR 4: [0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 54 ===
+  ===========ISSUE===========
+  ISSUE: pc=180 opcode=[0, 0, 0, 0, 0, 0, 0] rd=2 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=4 is_halt=0
+
+  === TICK 55 ===
+  ===========ISSUE===========
+  ISSUE: pc=184 opcode=[0, 1, 1, 0, 0, 1, 1] rd=1 rs1=1 op1_ready=[0] op1_tag=[1, 1, 0] rs2=2 op2_ready=[0] op2_tag=[0, 0, 1] rob_tag=5 is_halt=0
+
+  === TICK 56 ===
+  ===========ISSUE===========
+  ISSUE: pc=188 opcode=[0, 0, 1, 0, 0, 1, 1] rd=30 rs1=30 op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=6 is_halt=0
+
+  === TICK 57 ===
+  ===========ISSUE===========
+  ISSUE: pc=192 opcode=[0, 1, 0, 0, 0, 1, 1] rd=0 rs1=30 op1_ready=[0] op1_tag=[0, 1, 1] rs2=1 op2_ready=[0] op2_tag=[1, 0, 1] rob_tag=7 is_halt=0
+
+  === TICK 58 ===
+  ===========INTER===========
+
+  === TICK 59 ===
+  ===========DUMP===========
+  ROB:
+    [1] valid=1 ready=0 dest=x0 value=0 is_halt=0 is_store=1 pc = 168
+    [2] valid=1 ready=1 dest=x1 value=0 is_halt=0 is_store=0 pc = 172
+    [3] valid=1 ready=0 dest=x1 value=164 is_halt=0 is_store=0 pc = 176
+    [4] valid=1 ready=0 dest=x2 value=4194300 is_halt=0 is_store=0 pc = 180
+    [5] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 184
+    [6] valid=1 ready=0 dest=x30 value=164 is_halt=0 is_store=0 pc = 188
+    [7] valid=1 ready=0 dest=x0 value=4194304 is_halt=0 is_store=1 pc = 192
+  RS:
+    [0] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 180
+    [1] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 168
+    [2] valid=1 op1_ready=0 op1_tag=[1, 1, 0] op2_ready=0  op2_tag=[0, 0, 1]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 184
+    [3] valid=1 op1_ready=1 op1_tag=[0, 1, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 176
+    [4] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 188
+    [5] valid=1 op1_ready=0 op1_tag=[0, 1, 1] op2_ready=0  op2_tag=[1, 0, 1]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 192
+   reg : x1 state : 256 = [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 164 = [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194304 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388604 = [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=0
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [0, 1, 3, 4]
+  EXEC: rob_tag=4 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 180
+  EXEC: rob_tag=1 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 168
+  EXEC: rob_tag=3 opcode=[0, 0, 0, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 176
+  EXEC: rob_tag=6 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 188
+
+  === TICK 60 ===
+  ===========COMMIT===========
+  COMMIT: store addr=8388604 data=256=[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=168 
+
+  === TICK 61 ===
+  ===========COMMIT===========
+  COMMIT: reg x1 value=0=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=172
+
+  === TICK 62 ===
+  ===========COMMIT===========
+  COMMIT: reg x1 value=0=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=176
+
+  === TICK 63 ===
+  ===========COMMIT===========
+  COMMIT: reg x2 value=10=[0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=180
+
+  === TICK 64 ===
+  ===========FETCH===========
+  ROB SLOTS=5, RS SLOTS=6
+  IR 1: [1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 2: [0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 65 ===
+  ===========ISSUE===========
+  ISSUE: pc=196 opcode=[1, 1, 0, 0, 1, 1, 1] rd=1 rs1=30 op1_ready=[0] op1_tag=[0, 1, 1] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=0 is_halt=0
+
+  === TICK 66 ===
+  ===========ISSUE===========
+  ISSUE: pc=200 opcode=[0, 0, 1, 0, 0, 1, 1] rd=30 rs1=30 op1_ready=[0] op1_tag=[0, 1, 1] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=1 is_halt=0
+
+  === TICK 67 ===
+  ===========ISSUE===========
+  ISSUE: pc=204 opcode=[1, 0, 0, 0, 0, 0, 1] rd=0 rs1=1 op1_ready=[0] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=2 is_halt=0
+
+  === TICK 68 ===
+  ===========ISSUE===========
+  ISSUE: pc=208 opcode=[1, 1, 0, 0, 1, 1, 1] rd=1 rs1=31 op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=3 is_halt=0
+
+  === TICK 69 ===
+  ===========INTER===========
+
+  === TICK 70 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=0 dest=x1 value=8388604 is_halt=0 is_store=0 pc = 196
+    [1] valid=1 ready=0 dest=x30 value=0 is_halt=0 is_store=0 pc = 200
+    [2] valid=1 ready=0 dest=x0 value=0 is_halt=0 is_store=1 pc = 204
+    [3] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 208
+    [5] valid=1 ready=0 dest=x1 value=0 is_halt=0 is_store=0 pc = 184
+    [6] valid=1 ready=1 dest=x30 value=4194300 is_halt=0 is_store=0 pc = 188
+    [7] valid=1 ready=0 dest=x0 value=4194304 is_halt=0 is_store=1 pc = 192
+  RS:
+    [0] valid=1 op1_ready=0 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[0] mem_tag=[1, 1, 1] pc = 196
+    [1] valid=1 op1_ready=0 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 200
+    [2] valid=1 op1_ready=1 op1_tag=[1, 1, 0] op2_ready=1  op2_tag=[0, 0, 1]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 184
+    [3] valid=1 op1_ready=0 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 204
+    [4] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 208
+    [5] valid=1 op1_ready=1 op1_tag=[0, 1, 1] op2_ready=0  op2_tag=[1, 0, 1]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 192
+   reg : x1 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 10 = [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194304 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388604 = [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=256
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [2, 4]
+  EXEC: rob_tag=5 opcode=[0, 1, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 184
+  EXEC: rob_tag=3 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 208
+
+  === TICK 71 ===
+  ===========COMMIT===========
+  COMMIT: reg x1 value=10=[0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=184
+
+  === TICK 72 ===
+  ===========COMMIT===========
+  COMMIT: reg x30 value=4194300=[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=188
+
+  === TICK 73 ===
+  ===========FETCH===========
+  ROB SLOTS=3, RS SLOTS=4
+  IR 1: [0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 2: [0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 74 ===
+  ===========ISSUE===========
+  ISSUE: pc=212 opcode=[0, 0, 1, 0, 0, 1, 1] rd=31 rs1=31 op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=4 is_halt=0
+
+  === TICK 75 ===
+  ===========ISSUE===========
+  ISSUE: pc=216 opcode=[0, 0, 0, 1, 1, 1, 1] rd=2 rs1=1 op1_ready=[0] op1_tag=[1, 1, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=5 is_halt=0
+
+  === TICK 76 ===
+  ===========ISSUE===========
+  ISSUE: pc=220 opcode=[0, 0, 0, 0, 0, 0, 0] rd=1 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=6 is_halt=0
+
+  === TICK 77 ===
+  ===========INTER===========
+
+  === TICK 78 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=0 dest=x1 value=8388604 is_halt=0 is_store=0 pc = 196
+    [1] valid=1 ready=0 dest=x30 value=0 is_halt=0 is_store=0 pc = 200
+    [2] valid=1 ready=0 dest=x0 value=0 is_halt=0 is_store=1 pc = 204
+    [3] valid=1 ready=1 dest=x1 value=256 is_halt=0 is_store=0 pc = 208
+    [4] valid=1 ready=0 dest=x31 value=10 is_halt=0 is_store=0 pc = 212
+    [5] valid=1 ready=0 dest=x2 value=10 is_halt=0 is_store=0 pc = 216
+    [6] valid=1 ready=0 dest=x1 value=4194300 is_halt=0 is_store=0 pc = 220
+    [7] valid=1 ready=0 dest=x0 value=4194304 is_halt=0 is_store=1 pc = 192
+  RS:
+    [0] valid=1 op1_ready=1 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[0] mem_tag=[1, 1, 1] pc = 196
+    [1] valid=1 op1_ready=1 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 200
+    [2] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 212
+    [3] valid=1 op1_ready=0 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 204
+    [4] valid=1 op1_ready=0 op1_tag=[1, 1, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 216
+    [5] valid=1 op1_ready=1 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[1, 0, 1]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 192
+    [6] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 220
+   reg : x1 state : 10 = [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 10 = [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194300 = [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388604 = [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=164
+  mem[x30 + 4]=0
+  mem[x31]=256
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [1, 2, 5, 6]
+  EXEC: rob_tag=1 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 200
+  EXEC: rob_tag=4 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 212
+  EXEC: rob_tag=7 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 192
+  EXEC: rob_tag=6 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 220
+
+  === TICK 79 ===
+  ===========COMMIT===========
+  COMMIT: store addr=4194300 data=10=[0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=192 
+
+  === TICK 80 ===
+  ===========FETCH===========
+  ROB SLOTS=1, RS SLOTS=5
+  IR 1: [0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 2: [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+  === TICK 81 ===
+  ===========ISSUE===========
+  ISSUE: pc=224 opcode=[0, 0, 0, 0, 0, 1, 1] rd=1 rs1=1 op1_ready=[0] op1_tag=[0, 1, 1] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=7 is_halt=0
+
+  === TICK 82 ===
+  ===========INTER===========
+
+  === TICK 83 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=0 dest=x1 value=8388604 is_halt=0 is_store=0 pc = 196
+    [1] valid=1 ready=1 dest=x30 value=4194304 is_halt=0 is_store=0 pc = 200
+    [2] valid=1 ready=0 dest=x0 value=0 is_halt=0 is_store=1 pc = 204
+    [3] valid=1 ready=1 dest=x1 value=256 is_halt=0 is_store=0 pc = 208
+    [4] valid=1 ready=1 dest=x31 value=8388608 is_halt=0 is_store=0 pc = 212
+    [5] valid=1 ready=0 dest=x2 value=10 is_halt=0 is_store=0 pc = 216
+    [6] valid=1 ready=1 dest=x1 value=0 is_halt=0 is_store=0 pc = 220
+    [7] valid=1 ready=0 dest=x1 value=4194304 is_halt=0 is_store=0 pc = 224
+  RS:
+    [0] valid=1 op1_ready=1 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[1] mem_tag=[1, 1, 1] pc = 196
+    [1] valid=1 op1_ready=0 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 224
+    [3] valid=1 op1_ready=0 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 204
+    [4] valid=1 op1_ready=0 op1_tag=[1, 1, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 216
+   reg : x1 state : 10 = [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 10 = [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194300 = [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388604 = [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=10
+  mem[x30 + 4]=0
+  mem[x31]=256
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [0]
+  EXEC: rob_tag=0 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 196
+
+  === TICK 84 ===
+  ===========COMMIT===========
+  COMMIT: load reg x1 value=10=[0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=196 
+
+  === TICK 85 ===
+  ===========COMMIT===========
+  COMMIT: reg x30 value=4194304=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=200
+
+  === TICK 86 ===
+  ===========FETCH===========
+  ROB SLOTS=2, RS SLOTS=5
+  IR 1: [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 2: [0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  IR 4: [0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 87 ===
+  ===========ISSUE===========
+  ISSUE: pc=228 opcode=[0, 0, 0, 0, 0, 0, 0] rd=2 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=0 is_halt=0
+
+  === TICK 88 ===
+  ===========ISSUE===========
+  ISSUE: pc=232 opcode=[0, 1, 1, 0, 0, 1, 1] rd=1 rs1=1 op1_ready=[0] op1_tag=[1, 1, 1] rs2=2 op2_ready=[0] op2_tag=[0, 0, 0] rob_tag=1 is_halt=0
+
+  === TICK 89 ===
+  ===========INTER===========
+
+  === TICK 90 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=0 dest=x2 value=10 is_halt=0 is_store=0 pc = 228
+    [1] valid=1 ready=0 dest=x1 value=4194304 is_halt=0 is_store=0 pc = 232
+    [2] valid=1 ready=0 dest=x0 value=0 is_halt=0 is_store=1 pc = 204
+    [3] valid=1 ready=1 dest=x1 value=256 is_halt=0 is_store=0 pc = 208
+    [4] valid=1 ready=1 dest=x31 value=8388608 is_halt=0 is_store=0 pc = 212
+    [5] valid=1 ready=0 dest=x2 value=10 is_halt=0 is_store=0 pc = 216
+    [6] valid=1 ready=1 dest=x1 value=0 is_halt=0 is_store=0 pc = 220
+    [7] valid=1 ready=0 dest=x1 value=4194304 is_halt=0 is_store=0 pc = 224
+  RS:
+    [0] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 228
+    [1] valid=1 op1_ready=0 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 224
+    [2] valid=1 op1_ready=0 op1_tag=[1, 1, 1] op2_ready=0  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 232
+    [3] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 204
+    [4] valid=1 op1_ready=0 op1_tag=[1, 1, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 216
+   reg : x1 state : 10 = [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 10 = [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194304 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388604 = [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=256
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [0, 3]
+  EXEC: rob_tag=0 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[0, 0, 1] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 228
+  EXEC: rob_tag=2 opcode=[1, 0, 0, 0, 0, 0, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 204
+
+  === TICK 91 ===
+  ===========COMMIT===========
+  COMMIT: store addr=0 data=10=[0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=204 
+
+  === TICK 92 ===
+  ===========COMMIT===========
+  COMMIT: load reg x1 value=256=[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] pc=208 
+
+  === TICK 93 ===
+  ===========COMMIT===========
+  COMMIT: reg x31 value=8388608=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0] pc=212
+
+  === TICK 94 ===
+  ===========FETCH===========
+  ROB SLOTS=3, RS SLOTS=5
+  IR 1: [0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  IR 2: [0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 95 ===
+  ===========ISSUE===========
+  ISSUE: pc=236 opcode=[0, 0, 1, 0, 0, 1, 1] rd=30 rs1=30 op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=2 is_halt=0
+
+  === TICK 96 ===
+  ===========ISSUE===========
+  ISSUE: pc=240 opcode=[0, 1, 0, 0, 0, 1, 1] rd=0 rs1=30 op1_ready=[0] op1_tag=[0, 1, 0] rs2=1 op2_ready=[0] op2_tag=[1, 0, 0] rob_tag=3 is_halt=0
+
+  === TICK 97 ===
+  ===========ISSUE===========
+  ISSUE: pc=244 opcode=[1, 1, 0, 0, 1, 1, 1] rd=2 rs1=30 op1_ready=[0] op1_tag=[0, 1, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=4 is_halt=0
+
+  === TICK 98 ===
+  ===========INTER===========
+
+  === TICK 99 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=1 dest=x2 value=164 is_halt=0 is_store=0 pc = 228
+    [1] valid=1 ready=0 dest=x1 value=4194304 is_halt=0 is_store=0 pc = 232
+    [2] valid=1 ready=0 dest=x30 value=0 is_halt=0 is_store=0 pc = 236
+    [3] valid=1 ready=0 dest=x0 value=256 is_halt=0 is_store=1 pc = 240
+    [4] valid=1 ready=0 dest=x2 value=8388608 is_halt=0 is_store=0 pc = 244
+    [5] valid=1 ready=0 dest=x2 value=10 is_halt=0 is_store=0 pc = 216
+    [6] valid=1 ready=1 dest=x1 value=0 is_halt=0 is_store=0 pc = 220
+    [7] valid=1 ready=0 dest=x1 value=4194304 is_halt=0 is_store=0 pc = 224
+  RS:
+    [0] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 236
+    [1] valid=1 op1_ready=0 op1_tag=[0, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 224
+    [2] valid=1 op1_ready=0 op1_tag=[1, 1, 1] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 232
+    [3] valid=1 op1_ready=0 op1_tag=[0, 1, 0] op2_ready=0  op2_tag=[1, 0, 0]  is_mem=1 mem_rd[1] mem_tag=[0, 0, 0] pc = 240
+    [4] valid=1 op1_ready=1 op1_tag=[1, 1, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 216
+    [5] valid=1 op1_ready=0 op1_tag=[0, 1, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=1 mem_rd[0] mem_tag=[1, 1, 0] pc = 244
+   reg : x1 state : 256 = [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 10 = [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194304 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388608 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=0
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [0, 4]
+  EXEC: rob_tag=2 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 236
+  EXEC: rob_tag=5 opcode=[0, 0, 0, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 216
+
+  === TICK 100 ===
+  ===========COMMIT===========
+  COMMIT: jalr pc=256
+  ===========FLUSH===========
+
+  === TICK 101 ===
+  ===========FETCH===========
+  ROB SLOTS=8, RS SLOTS=8
+  IR 1: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 2: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 3: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  IR 4: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  === TICK 102 ===
+  ===========ISSUE===========
+  ISSUE: pc=256 opcode=[1, 1, 1, 1, 1, 1, 1] rd=0 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=0 is_halt=1
+
+  === TICK 103 ===
+  ===========ISSUE===========
+  ISSUE: pc=260 opcode=[1, 1, 1, 1, 1, 1, 1] rd=0 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=1 is_halt=1
+
+  === TICK 104 ===
+  ===========ISSUE===========
+  ISSUE: pc=264 opcode=[1, 1, 1, 1, 1, 1, 1] rd=0 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=2 is_halt=1
+
+  === TICK 105 ===
+  ===========ISSUE===========
+  ISSUE: pc=268 opcode=[1, 1, 1, 1, 1, 1, 1] rd=0 rs1=None op1_ready=[1] op1_tag=[0, 0, 0] rs2=None op2_ready=[1] op2_tag=[0, 0, 0] rob_tag=3 is_halt=1
+
+  === TICK 106 ===
+  ===========INTER===========
+
+  === TICK 107 ===
+  ===========DUMP===========
+  ROB:
+    [0] valid=1 ready=0 dest=x0 value=164 is_halt=1 is_store=0 pc = 256
+    [1] valid=1 ready=0 dest=x0 value=4194304 is_halt=1 is_store=0 pc = 260
+    [2] valid=1 ready=0 dest=x0 value=4194300 is_halt=1 is_store=0 pc = 264
+    [3] valid=1 ready=0 dest=x0 value=256 is_halt=1 is_store=0 pc = 268
+  RS:
+    [0] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 256
+    [1] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 260
+    [2] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 264
+    [3] valid=1 op1_ready=1 op1_tag=[0, 0, 0] op2_ready=1  op2_tag=[0, 0, 0]  is_mem=0 mem_rd[1] mem_tag=[0, 0, 0] pc = 268
+   reg : x1 state : 256 = [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x2 state : 220 = [0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x3 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x4 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x5 state : 0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x30 state : 4194304 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   reg : x31 state : 8388608 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  mem[x30]=0
+  mem[x30 + 4]=0
+  mem[x31]=0
+  mem[x31 + 4]=0
+  ===========EXECUTE===========
+  READY: [0, 1, 2, 3]
+  EXEC: rob_tag=0 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 256
+  HALT DETECTED
+  EXEC: rob_tag=1 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 260
+  HALT DETECTED
+  EXEC: rob_tag=2 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 264
+  HALT DETECTED
+  EXEC: rob_tag=3 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 268
+  HALT DETECTED
+
+  === TICK 108 ===
+  ===========COMMIT===========
+  COMMIT: HALT FLAG SET pc=256
+  TICKS 108
+  ==========OUTPUT==========
+  10

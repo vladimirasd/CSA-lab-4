@@ -5,7 +5,6 @@ version = "0.1.0"
 [tool.ruff]
 line-length = 100
 select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "ISC", "PT"]
-ignore = ["E501"]
 
 [tool.ruff.format]
 quote-style = "double"
@@ -13,15 +12,9 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
 
-[tool.mypy]
-strict = true
-warn_return_any = true
-warn_unused_configs = true
-ignore_missing_imports = true
-disallow_untyped_defs = false
-disallow_untyped_calls = false
-disallow_any_unimported = true
-no_implicit_optional = true
-warn_redundant_casts = true
-warn_unused_ignores = true
-explicit_package_bases = true
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+    "pytest-golden>=0.2.0",
+    "PyYAML>=6.0",
+]

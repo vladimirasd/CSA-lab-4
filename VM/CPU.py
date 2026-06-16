@@ -1,14 +1,14 @@
 import struct
 
-from ALU.alu import Alu
-from CU.control_unit import CU
-from CU.ROB import ROB
-from CU.RS import RS
-from IO.inputinterface import InputInterface
-from IO.outputinterface import OutputInterface
-from MEM.memory import Memory
-from MEM.mux import Mux
-from MEM.registers import (
+from VM.ALU.alu import Alu
+from VM.CU.control_unit import CU
+from VM.CU.ROB import ROB
+from VM.CU.RS import RS
+from VM.IO.inputinterface import InputInterface
+from VM.IO.outputinterface import OutputInterface
+from VM.MEM.memory import Memory
+from VM.MEM.mux import Mux
+from VM.MEM.registers import (
     AdressRegister,
     DataRegister,
     ImmRegister,
@@ -18,7 +18,7 @@ from MEM.registers import (
 
 
 class CPU:
-    def __init__(self, bin_file, start, input_file=None, log_file=None):
+    def __init__(self, bin_file, start, input_file=None, log_file=None, log_level=3):
         self._data_registers = {}
 
         reg = ZeroRegister("x0", None)
@@ -132,6 +132,7 @@ class CPU:
             rob=self._rob,
             rs=self._rs,
             log_file=log_file,
+            log_level=log_level
         )
 
         self._data_registers["x27"]._value = [0, 0, 1, 0, 0, 1, 0, 1] + 24 * [0]

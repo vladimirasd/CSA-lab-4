@@ -1,0 +1,247 @@
+in_source: |
+  VARIABLE sum
+  VARIABLE square_sum
+  101 1
+  do
+      sum @ I + sum !
+      square_sum @ I I * + square_sum !
+      1
+  loop
+  sum @ sum @ *
+  square_sum @ -
+  .
+in_stdin: ''
+log_level: 1
+out_code_base64: 
+  BAAAAEBCAABigE4A5I4eAGPEvgHkDh0A86IPAOSPTwB8ggIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAADggMAAAFEGAOaAIABkD8//YiAfAIAAAADggMAAABEAAOaAIABkD8//YiAfAPMgDwBzIU8AYiAvAGIiHwDzIA8AZA9PAOSPz/9ioB8A8yAPAGQPTwDkj8//YqAfAIAAAADggMAAAEEKAOaAIABkD8//YiAfAPMgDwBkD08A86AAAGQPz/9iIB8A86APAOSPz/9ioB8A86APAOSPTwBkD8//YiAfAPMgDwBkD08AcyEPAGQPTwDmgCAAZA/P/2IgHwCAAAAA4IDAAABBCgDmgCAAZA/P/2IgHwDzIA8AZA9PAHMhDwBkD08AYqAgAIAAAADggMAAAIEKAOaAIABkD8//YiAfAPMgDwBkD08A86AAAGQPz/9iIB8A86APAOSPz/9ioB8A86APAOSPTwBkD8//YiAfAPOgDwDkj8//YqAfAPOgDwDkj08AZA/P/2IgHwDzIA8AZA9PAHMhDwBkD08A5oAgAmQPz/9iIB8A8yAPAGQPTwBzIQ8AZA9PAOaAIABkD8//YiAfAIAAAADggMAAAIEKAOaAIABkD8//YiAfAPMgDwBkD08AcyEPAGQPTwBioCAAgAAAAOCAwAAAEQAA5oAgAGQPz/9iIB8A8yAPAGQPTwBzoQ8A5I9PAOaAIABzoQ8A5I9PAGPsIADkj8//YqAvAOSPz/9ioB8Ae8Dl/4AAAADggMAAAEEKAOaAIABkD8//YiAfAPMgDwBkD08A86AAAGQPz/9iIB8AgAAAAOCAwAAAQQoA5oAgAGQPz/9iIB8A8yAPAGQPTwDzoAAAZA/P/2IgHwDzIA8AZA9PAHMhDwBkD08A5oAgAmQPz/9iIB8AgAAAAOCAwAAAgQoA5oAgAGQPz/9iIB8A8yAPAGQPTwDzoAAAZA/P/2IgHwDzIA8AZA9PAHMhDwBkD08A5gARBGQPz/9iIB8A8yAPAGQPTwBBgAAAfwAAAA==
+out_code: |
+  0 - 00000004 - data
+  4 - 00004240 - input x4 x0
+  8 - 004E8062 - sb x4, 0(x29)
+  12 - 001E8EE4 - addi x29, x29, 1
+  16 - 01BEC463 - bgt  x29, x27, 8
+  20 - 001D0EE4 - addi x29, x26, 1
+  24 - 000FA2F3 - lw  x5, 0(x31)
+  28 - 004F8FE4 - addi x31, x31, 4
+  32 - 0002827C - jalri x4, x5, 0
+  36 - 00000000 - lui x0, 0x0
+  40 - 00000000 - lui x0, 0x0
+  44 - 00000000 - lui x0, 0x0
+  48 - 00000000 - lui x0, 0x0
+  52 - 00000000 - lui x0, 0x0
+  56 - 00000000 - lui x0, 0x0
+  60 - 00000000 - lui x0, 0x0
+  64 - 00000000 - lui x0, 0x0
+  68 - 00000000 - lui x0, 0x0
+  72 - 00000000 - lui x0, 0x0
+  76 - 00000000 - lui x0, 0x0
+  80 - 00000000 - lui x0, 0x0
+  84 - 00000000 - lui x0, 0x0
+  88 - 00000000 - lui x0, 0x0
+  92 - 00000000 - lui x0, 0x0
+  96 - 00000000 - lui x0, 0x0
+  100 - 00000000 - lui x0, 0x0
+  104 - 00000000 - lui x0, 0x0
+  108 - 00000000 - lui x0, 0x0
+  112 - 00000000 - lui x0, 0x0
+  116 - 00000000 - lui x0, 0x0
+  120 - 00000000 - lui x0, 0x0
+  124 - 00000000 - lui x0, 0x0
+  128 - 00000000 - lui x0, 0x0
+  132 - 00000000 - lui x0, 0x0
+  136 - 00000000 - lui x0, 0x0
+  140 - 00000000 - lui x0, 0x0
+  144 - 00000000 - lui x0, 0x0
+  148 - 00000000 - lui x0, 0x0
+  152 - 00000000 - lui x0, 0x0
+  156 - 00000000 - lui x0, 0x0
+  160 - 00000000 - lui x0, 0x0
+  164 - 00000000 - lui x0, 0x0
+  168 - 00000000 - lui x0, 0x0
+  172 - 00000080 - lui x1, 0x0
+  176 - 00C080E0 - slli x1, x1, 12
+  180 - 00065100 - lui x2, 0x65
+  184 - 002080E6 - add x1, x1, x2
+  188 - FFCF0F64 - addi x30, x30, -4
+  192 - 001F2062 - sw x1, 0(x30)
+  196 - 00000080 - lui x1, 0x0
+  200 - 00C080E0 - slli x1, x1, 12
+  204 - 00001100 - lui x2, 0x1
+  208 - 002080E6 - add x1, x1, x2
+  212 - FFCF0F64 - addi x30, x30, -4
+  216 - 001F2062 - sw x1, 0(x30)
+  220 - 000F20F3 - lw  x1, 0(x30)
+  224 - 004F2173 - lw  x2, 4(x30)
+  228 - 002F2062 - sw x2, 0(x30)
+  232 - 001F2262 - sw x1, 4(x30)
+  236 - 000F20F3 - lw  x1, 0(x30)
+  240 - 004F0F64 - addi x30, x30, 4
+  244 - FFCF8FE4 - addi x31, x31, -4
+  248 - 001FA062 - sw x1, 0(x31)
+  252 - 000F20F3 - lw  x1, 0(x30)
+  256 - 004F0F64 - addi x30, x30, 4
+  260 - FFCF8FE4 - addi x31, x31, -4
+  264 - 001FA062 - sw x1, 0(x31)
+  268 - 00000080 - lui x1, 0x0
+  272 - 00C080E0 - slli x1, x1, 12
+  276 - 000A4100 - lui x2, 0xa4
+  280 - 002080E6 - add x1, x1, x2
+  284 - FFCF0F64 - addi x30, x30, -4
+  288 - 001F2062 - sw x1, 0(x30)
+  292 - 000F20F3 - lw  x1, 0(x30)
+  296 - 004F0F64 - addi x30, x30, 4
+  300 - 0000A0F3 - lw  x1, 0(x1)
+  304 - FFCF0F64 - addi x30, x30, -4
+  308 - 001F2062 - sw x1, 0(x30)
+  312 - 000FA0F3 - lw  x1, 0(x31)
+  316 - FFCF8FE4 - addi x31, x31, -4
+  320 - 001FA062 - sw x1, 0(x31)
+  324 - 000FA0F3 - lw  x1, 0(x31)
+  328 - 004F8FE4 - addi x31, x31, 4
+  332 - FFCF0F64 - addi x30, x30, -4
+  336 - 001F2062 - sw x1, 0(x30)
+  340 - 000F20F3 - lw  x1, 0(x30)
+  344 - 004F0F64 - addi x30, x30, 4
+  348 - 000F2173 - lw  x2, 0(x30)
+  352 - 004F0F64 - addi x30, x30, 4
+  356 - 002080E6 - add x1, x1, x2
+  360 - FFCF0F64 - addi x30, x30, -4
+  364 - 001F2062 - sw x1, 0(x30)
+  368 - 00000080 - lui x1, 0x0
+  372 - 00C080E0 - slli x1, x1, 12
+  376 - 000A4100 - lui x2, 0xa4
+  380 - 002080E6 - add x1, x1, x2
+  384 - FFCF0F64 - addi x30, x30, -4
+  388 - 001F2062 - sw x1, 0(x30)
+  392 - 000F20F3 - lw  x1, 0(x30)
+  396 - 004F0F64 - addi x30, x30, 4
+  400 - 000F2173 - lw  x2, 0(x30)
+  404 - 004F0F64 - addi x30, x30, 4
+  408 - 0020A062 - sw x2, 0(x1)
+  412 - 00000080 - lui x1, 0x0
+  416 - 00C080E0 - slli x1, x1, 12
+  420 - 000A8100 - lui x2, 0xa8
+  424 - 002080E6 - add x1, x1, x2
+  428 - FFCF0F64 - addi x30, x30, -4
+  432 - 001F2062 - sw x1, 0(x30)
+  436 - 000F20F3 - lw  x1, 0(x30)
+  440 - 004F0F64 - addi x30, x30, 4
+  444 - 0000A0F3 - lw  x1, 0(x1)
+  448 - FFCF0F64 - addi x30, x30, -4
+  452 - 001F2062 - sw x1, 0(x30)
+  456 - 000FA0F3 - lw  x1, 0(x31)
+  460 - FFCF8FE4 - addi x31, x31, -4
+  464 - 001FA062 - sw x1, 0(x31)
+  468 - 000FA0F3 - lw  x1, 0(x31)
+  472 - 004F8FE4 - addi x31, x31, 4
+  476 - FFCF0F64 - addi x30, x30, -4
+  480 - 001F2062 - sw x1, 0(x30)
+  484 - 000FA0F3 - lw  x1, 0(x31)
+  488 - FFCF8FE4 - addi x31, x31, -4
+  492 - 001FA062 - sw x1, 0(x31)
+  496 - 000FA0F3 - lw  x1, 0(x31)
+  500 - 004F8FE4 - addi x31, x31, 4
+  504 - FFCF0F64 - addi x30, x30, -4
+  508 - 001F2062 - sw x1, 0(x30)
+  512 - 000F20F3 - lw  x1, 0(x30)
+  516 - 004F0F64 - addi x30, x30, 4
+  520 - 000F2173 - lw  x2, 0(x30)
+  524 - 004F0F64 - addi x30, x30, 4
+  528 - 022080E6 - mul x1, x1, x2
+  532 - FFCF0F64 - addi x30, x30, -4
+  536 - 001F2062 - sw x1, 0(x30)
+  540 - 000F20F3 - lw  x1, 0(x30)
+  544 - 004F0F64 - addi x30, x30, 4
+  548 - 000F2173 - lw  x2, 0(x30)
+  552 - 004F0F64 - addi x30, x30, 4
+  556 - 002080E6 - add x1, x1, x2
+  560 - FFCF0F64 - addi x30, x30, -4
+  564 - 001F2062 - sw x1, 0(x30)
+  568 - 00000080 - lui x1, 0x0
+  572 - 00C080E0 - slli x1, x1, 12
+  576 - 000A8100 - lui x2, 0xa8
+  580 - 002080E6 - add x1, x1, x2
+  584 - FFCF0F64 - addi x30, x30, -4
+  588 - 001F2062 - sw x1, 0(x30)
+  592 - 000F20F3 - lw  x1, 0(x30)
+  596 - 004F0F64 - addi x30, x30, 4
+  600 - 000F2173 - lw  x2, 0(x30)
+  604 - 004F0F64 - addi x30, x30, 4
+  608 - 0020A062 - sw x2, 0(x1)
+  612 - 00000080 - lui x1, 0x0
+  616 - 00C080E0 - slli x1, x1, 12
+  620 - 00001100 - lui x2, 0x1
+  624 - 002080E6 - add x1, x1, x2
+  628 - FFCF0F64 - addi x30, x30, -4
+  632 - 001F2062 - sw x1, 0(x30)
+  636 - 000F20F3 - lw  x1, 0(x30)
+  640 - 004F0F64 - addi x30, x30, 4
+  644 - 000FA173 - lw  x2, 0(x31)
+  648 - 004F8FE4 - addi x31, x31, 4
+  652 - 002080E6 - add x1, x1, x2
+  656 - 000FA173 - lw  x2, 0(x31)
+  660 - 004F8FE4 - addi x31, x31, 4
+  664 - 0020EC63 - bltu x1, x2, 24
+  668 - FFCF8FE4 - addi x31, x31, -4
+  672 - 002FA062 - sw x2, 0(x31)
+  676 - FFCF8FE4 - addi x31, x31, -4
+  680 - 001FA062 - sw x1, 0(x31)
+  684 - FFE5C07B - jal x0, 1048156
+  688 - 00000080 - lui x1, 0x0
+  692 - 00C080E0 - slli x1, x1, 12
+  696 - 000A4100 - lui x2, 0xa4
+  700 - 002080E6 - add x1, x1, x2
+  704 - FFCF0F64 - addi x30, x30, -4
+  708 - 001F2062 - sw x1, 0(x30)
+  712 - 000F20F3 - lw  x1, 0(x30)
+  716 - 004F0F64 - addi x30, x30, 4
+  720 - 0000A0F3 - lw  x1, 0(x1)
+  724 - FFCF0F64 - addi x30, x30, -4
+  728 - 001F2062 - sw x1, 0(x30)
+  732 - 00000080 - lui x1, 0x0
+  736 - 00C080E0 - slli x1, x1, 12
+  740 - 000A4100 - lui x2, 0xa4
+  744 - 002080E6 - add x1, x1, x2
+  748 - FFCF0F64 - addi x30, x30, -4
+  752 - 001F2062 - sw x1, 0(x30)
+  756 - 000F20F3 - lw  x1, 0(x30)
+  760 - 004F0F64 - addi x30, x30, 4
+  764 - 0000A0F3 - lw  x1, 0(x1)
+  768 - FFCF0F64 - addi x30, x30, -4
+  772 - 001F2062 - sw x1, 0(x30)
+  776 - 000F20F3 - lw  x1, 0(x30)
+  780 - 004F0F64 - addi x30, x30, 4
+  784 - 000F2173 - lw  x2, 0(x30)
+  788 - 004F0F64 - addi x30, x30, 4
+  792 - 022080E6 - mul x1, x1, x2
+  796 - FFCF0F64 - addi x30, x30, -4
+  800 - 001F2062 - sw x1, 0(x30)
+  804 - 00000080 - lui x1, 0x0
+  808 - 00C080E0 - slli x1, x1, 12
+  812 - 000A8100 - lui x2, 0xa8
+  816 - 002080E6 - add x1, x1, x2
+  820 - FFCF0F64 - addi x30, x30, -4
+  824 - 001F2062 - sw x1, 0(x30)
+  828 - 000F20F3 - lw  x1, 0(x30)
+  832 - 004F0F64 - addi x30, x30, 4
+  836 - 0000A0F3 - lw  x1, 0(x1)
+  840 - FFCF0F64 - addi x30, x30, -4
+  844 - 001F2062 - sw x1, 0(x30)
+  848 - 000F20F3 - lw  x1, 0(x30)
+  852 - 004F0F64 - addi x30, x30, 4
+  856 - 000F2173 - lw  x2, 0(x30)
+  860 - 004F0F64 - addi x30, x30, 4
+  864 - 041100E6 - sub x1, x2, x1
+  868 - FFCF0F64 - addi x30, x30, -4
+  872 - 001F2062 - sw x1, 0(x30)
+  876 - 000F20F3 - lw  x1, 0(x30)
+  880 - 004F0F64 - addi x30, x30, 4
+  884 - 00008041 - print_word x0 x1
+  888 - 0000007F - halt
+out_stdout: |2+
+
+out_log: |
+  COMMIT: HALT FLAG SET pc=888
+  TICKS 39161
+  ==========OUTPUT==========
+  25164150

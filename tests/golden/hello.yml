@@ -1,0 +1,163 @@
+in_source: |
+  "Hello, World!"
+  1 -
+  begin
+      1 + DUP @ 255 &
+      DUP 0 !=
+      if
+          DUP emit
+      then
+      0 =
+  until
+in_stdin: ''
+log_level: 1
+out_code_base64: 
+  BAAAAEBCAABigE4A5I4eAGPEvgHkDh0A86IPAOSPTwB8ggIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIZWxsbywgV29ybGQhAAAAgAAAAOCAwAAAQQoA5oAgAGQPz/9iIB8AgAAAAOCAwAAAEQAA5oAgAGQPz/9iIB8A8yAPAGQPTwBzIQ8AZA9PAOYAEQRkD8//YiAfAIAAAADggMAAABEAAOaAIABkD8//YiAfAPMgDwBkD08AcyEPAGQPTwDmgCAAZA/P/2IgHwDzIA8AZA/P/2IgHwDzIA8AZA9PAPOgAABkD8//YiAfAIAAAADggMAAAPEPAOaAIABkD8//YiAfAPMgDwBkD08AcyEPAGQPTwDm8CAAZA/P/2IgHwDzIA8AZA/P/2IgHwCAAAAA4IDAAAABAADmgCAAZA/P/2IgHwDzIA8AZA9PAHMhDwBkD08A5qAgBmQPz/9iIB8A8yAPAGQPTwBjjgAA8yAPAGQPz/9iIB8A8yAPAGQPTwBBwAAAgAAAAOCAwAAAAQAA5oAgAGQPz/9iIB8A8yAPAGQPTwBzIQ8AZA9PAOagIAJkD8//YiAfAPMgDwBkD08AY4wA7H8AAAA=
+out_code: |
+  0 - 00000004 - data
+  4 - 00004240 - input x4 x0
+  8 - 004E8062 - sb x4, 0(x29)
+  12 - 001E8EE4 - addi x29, x29, 1
+  16 - 01BEC463 - bgt  x29, x27, 8
+  20 - 001D0EE4 - addi x29, x26, 1
+  24 - 000FA2F3 - lw  x5, 0(x31)
+  28 - 004F8FE4 - addi x31, x31, 4
+  32 - 0002827C - jalri x4, x5, 0
+  36 - 00000000 - lui x0, 0x0
+  40 - 00000000 - lui x0, 0x0
+  44 - 00000000 - lui x0, 0x0
+  48 - 00000000 - lui x0, 0x0
+  52 - 00000000 - lui x0, 0x0
+  56 - 00000000 - lui x0, 0x0
+  60 - 00000000 - lui x0, 0x0
+  64 - 00000000 - lui x0, 0x0
+  68 - 00000000 - lui x0, 0x0
+  72 - 00000000 - lui x0, 0x0
+  76 - 00000000 - lui x0, 0x0
+  80 - 00000000 - lui x0, 0x0
+  84 - 00000000 - lui x0, 0x0
+  88 - 00000000 - lui x0, 0x0
+  92 - 00000000 - lui x0, 0x0
+  96 - 00000000 - lui x0, 0x0
+  100 - 00000000 - lui x0, 0x0
+  104 - 00000000 - lui x0, 0x0
+  108 - 00000000 - lui x0, 0x0
+  112 - 00000000 - lui x0, 0x0
+  116 - 00000000 - lui x0, 0x0
+  120 - 00000000 - lui x0, 0x0
+  124 - 00000000 - lui x0, 0x0
+  128 - 00000000 - lui x0, 0x0
+  132 - 00000000 - lui x0, 0x0
+  136 - 00000000 - lui x0, 0x0
+  140 - 00000000 - lui x0, 0x0
+  144 - 00000000 - lui x0, 0x0
+  148 - 00000000 - lui x0, 0x0
+  152 - 00000000 - lui x0, 0x0
+  156 - 00000000 - lui x0, 0x0
+  160 - 00000000 - lui x0, 0x0
+  164 - 6C6C6548 - data
+  168 - 57202C6F - data
+  172 - 646C726F - data
+  176 - 00000021 - data
+  180 - 00000080 - lui x1, 0x0
+  184 - 00C080E0 - slli x1, x1, 12
+  188 - 000A4100 - lui x2, 0xa4
+  192 - 002080E6 - add x1, x1, x2
+  196 - FFCF0F64 - addi x30, x30, -4
+  200 - 001F2062 - sw x1, 0(x30)
+  204 - 00000080 - lui x1, 0x0
+  208 - 00C080E0 - slli x1, x1, 12
+  212 - 00001100 - lui x2, 0x1
+  216 - 002080E6 - add x1, x1, x2
+  220 - FFCF0F64 - addi x30, x30, -4
+  224 - 001F2062 - sw x1, 0(x30)
+  228 - 000F20F3 - lw  x1, 0(x30)
+  232 - 004F0F64 - addi x30, x30, 4
+  236 - 000F2173 - lw  x2, 0(x30)
+  240 - 004F0F64 - addi x30, x30, 4
+  244 - 041100E6 - sub x1, x2, x1
+  248 - FFCF0F64 - addi x30, x30, -4
+  252 - 001F2062 - sw x1, 0(x30)
+  256 - 00000080 - lui x1, 0x0
+  260 - 00C080E0 - slli x1, x1, 12
+  264 - 00001100 - lui x2, 0x1
+  268 - 002080E6 - add x1, x1, x2
+  272 - FFCF0F64 - addi x30, x30, -4
+  276 - 001F2062 - sw x1, 0(x30)
+  280 - 000F20F3 - lw  x1, 0(x30)
+  284 - 004F0F64 - addi x30, x30, 4
+  288 - 000F2173 - lw  x2, 0(x30)
+  292 - 004F0F64 - addi x30, x30, 4
+  296 - 002080E6 - add x1, x1, x2
+  300 - FFCF0F64 - addi x30, x30, -4
+  304 - 001F2062 - sw x1, 0(x30)
+  308 - 000F20F3 - lw  x1, 0(x30)
+  312 - FFCF0F64 - addi x30, x30, -4
+  316 - 001F2062 - sw x1, 0(x30)
+  320 - 000F20F3 - lw  x1, 0(x30)
+  324 - 004F0F64 - addi x30, x30, 4
+  328 - 0000A0F3 - lw  x1, 0(x1)
+  332 - FFCF0F64 - addi x30, x30, -4
+  336 - 001F2062 - sw x1, 0(x30)
+  340 - 00000080 - lui x1, 0x0
+  344 - 00C080E0 - slli x1, x1, 12
+  348 - 000FF100 - lui x2, 0xff
+  352 - 002080E6 - add x1, x1, x2
+  356 - FFCF0F64 - addi x30, x30, -4
+  360 - 001F2062 - sw x1, 0(x30)
+  364 - 000F20F3 - lw  x1, 0(x30)
+  368 - 004F0F64 - addi x30, x30, 4
+  372 - 000F2173 - lw  x2, 0(x30)
+  376 - 004F0F64 - addi x30, x30, 4
+  380 - 0020F0E6 - and x1, x1, x2
+  384 - FFCF0F64 - addi x30, x30, -4
+  388 - 001F2062 - sw x1, 0(x30)
+  392 - 000F20F3 - lw  x1, 0(x30)
+  396 - FFCF0F64 - addi x30, x30, -4
+  400 - 001F2062 - sw x1, 0(x30)
+  404 - 00000080 - lui x1, 0x0
+  408 - 00C080E0 - slli x1, x1, 12
+  412 - 00000100 - lui x2, 0x0
+  416 - 002080E6 - add x1, x1, x2
+  420 - FFCF0F64 - addi x30, x30, -4
+  424 - 001F2062 - sw x1, 0(x30)
+  428 - 000F20F3 - lw  x1, 0(x30)
+  432 - 004F0F64 - addi x30, x30, 4
+  436 - 000F2173 - lw  x2, 0(x30)
+  440 - 004F0F64 - addi x30, x30, 4
+  444 - 0620A0E6 - sne x1, x1, x2
+  448 - FFCF0F64 - addi x30, x30, -4
+  452 - 001F2062 - sw x1, 0(x30)
+  456 - 000F20F3 - lw  x1, 0(x30)
+  460 - 004F0F64 - addi x30, x30, 4
+  464 - 00008E63 - beq  x1, x0, 28
+  468 - 000F20F3 - lw  x1, 0(x30)
+  472 - FFCF0F64 - addi x30, x30, -4
+  476 - 001F2062 - sw x1, 0(x30)
+  480 - 000F20F3 - lw  x1, 0(x30)
+  484 - 004F0F64 - addi x30, x30, 4
+  488 - 0000C041 - print x0 x1
+  492 - 00000080 - lui x1, 0x0
+  496 - 00C080E0 - slli x1, x1, 12
+  500 - 00000100 - lui x2, 0x0
+  504 - 002080E6 - add x1, x1, x2
+  508 - FFCF0F64 - addi x30, x30, -4
+  512 - 001F2062 - sw x1, 0(x30)
+  516 - 000F20F3 - lw  x1, 0(x30)
+  520 - 004F0F64 - addi x30, x30, 4
+  524 - 000F2173 - lw  x2, 0(x30)
+  528 - 004F0F64 - addi x30, x30, 4
+  532 - 0220A0E6 - seq x1, x1, x2
+  536 - FFCF0F64 - addi x30, x30, -4
+  540 - 001F2062 - sw x1, 0(x30)
+  544 - 000F20F3 - lw  x1, 0(x30)
+  548 - 004F0F64 - addi x30, x30, 4
+  552 - EC008C63 - beq  x1, x0, -296
+  556 - 0000007F - halt
+out_stdout: |2+
+
+out_log: |-
+  COMMIT: HALT FLAG SET pc=556
+  TICKS 3931
+  ==========OUTPUT==========
+  Hello, World!

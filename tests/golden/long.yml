@@ -1,0 +1,643 @@
+in_source: |
+  : long_plus       \ a_lo a_hi b_lo b_hi
+      ROT +          \ a_lo b_lo sum_h'
+      SWAP ROT        \ sum_h' b_lo a_lo
+      DUP ROT  +       \ sum_h' b_lo sum_lo
+      DUP ROT           \ sum_h' sum_lo sum_lo b_lo
+      U>                 \ sum_h' sum_lo carry
+      ROT                 \  sum_lo carry sum_h'
+      +                    \ sum_lo  sum_h
+  ;
+  4294967295 1 2 1 long_plus . .
+in_stdin: ''
+log_level: 2
+out_code_base64: 
+  BAAAAEBCAABigE4A5I4eAGPEvgHkDh0A86IPAOSPTwB8ggIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADkj8//YqAfAPMgDwBkD08AcyEPAGQPTwDzIQ8AZA9PAGQPz/9iIC8AZA/P/2IgHwBkD8//YiA/APMgDwBkD08AcyEPAGQPTwDmgCAAZA/P/2IgHwDzIA8AcyFPAGIgLwBiIh8A8yAPAGQPTwBzIQ8AZA9PAPMhDwBkD08AZA/P/2IgLwBkD8//YiAfAGQPz/9iID8A8yAPAGQPz/9iIB8A8yAPAGQPTwBzIQ8AZA9PAPMhDwBkD08AZA/P/2IgLwBkD8//YiAfAGQPz/9iID8A8yAPAGQPTwBzIQ8AZA9PAOaAIABkD8//YiAfAPMgDwBkD8//YiAfAPMgDwBkD08AcyEPAGQPTwDzIQ8AZA9PAGQPz/9iIC8AZA/P/2IgHwBkD8//YiA/AHMhDwBkD08A8yAPAGQPTwDm4CAAZA/P/2IgHwDzIA8AZA9PAHMhDwBkD08A8yEPAGQPTwBkD8//YiAvAGQPz/9iIB8AZA/P/2IgPwDzIA8AZA9PAHMhDwBkD08A5oAgAGQPz/9iIB8A86APAOSPTwB4gQAAgPD//+CAwAAA8f8A5oAgAGQPz/9iIB8AgAAAAOCAwAAAEQAA5oAgAGQPz/9iIB8AgAAAAOCAwAAAIQAA5oAgAGQPz/9iIB8AgAAAAOCAwAAAEQAA5oAgAGQPz/9iIB8A+0Dg//MgDwBkD08AQYAAAPMgDwBkD08AQYAAAH8AAAA=
+out_code: |
+  0 - 00000004 - data
+  4 - 00004240 - input x4 x0
+  8 - 004E8062 - sb x4, 0(x29)
+  12 - 001E8EE4 - addi x29, x29, 1
+  16 - 01BEC463 - bgt  x29, x27, 8
+  20 - 001D0EE4 - addi x29, x26, 1
+  24 - 000FA2F3 - lw  x5, 0(x31)
+  28 - 004F8FE4 - addi x31, x31, 4
+  32 - 0002827C - jalri x4, x5, 0
+  36 - 00000000 - lui x0, 0x0
+  40 - 00000000 - lui x0, 0x0
+  44 - 00000000 - lui x0, 0x0
+  48 - 00000000 - lui x0, 0x0
+  52 - 00000000 - lui x0, 0x0
+  56 - 00000000 - lui x0, 0x0
+  60 - 00000000 - lui x0, 0x0
+  64 - 00000000 - lui x0, 0x0
+  68 - 00000000 - lui x0, 0x0
+  72 - 00000000 - lui x0, 0x0
+  76 - 00000000 - lui x0, 0x0
+  80 - 00000000 - lui x0, 0x0
+  84 - 00000000 - lui x0, 0x0
+  88 - 00000000 - lui x0, 0x0
+  92 - 00000000 - lui x0, 0x0
+  96 - 00000000 - lui x0, 0x0
+  100 - 00000000 - lui x0, 0x0
+  104 - 00000000 - lui x0, 0x0
+  108 - 00000000 - lui x0, 0x0
+  112 - 00000000 - lui x0, 0x0
+  116 - 00000000 - lui x0, 0x0
+  120 - 00000000 - lui x0, 0x0
+  124 - 00000000 - lui x0, 0x0
+  128 - 00000000 - lui x0, 0x0
+  132 - 00000000 - lui x0, 0x0
+  136 - 00000000 - lui x0, 0x0
+  140 - 00000000 - lui x0, 0x0
+  144 - 00000000 - lui x0, 0x0
+  148 - 00000000 - lui x0, 0x0
+  152 - 00000000 - lui x0, 0x0
+  156 - 00000000 - lui x0, 0x0
+  160 - 00000000 - lui x0, 0x0
+  164 - FFCF8FE4 - addi x31, x31, -4
+  168 - 001FA062 - sw x1, 0(x31)
+  172 - 000F20F3 - lw  x1, 0(x30)
+  176 - 004F0F64 - addi x30, x30, 4
+  180 - 000F2173 - lw  x2, 0(x30)
+  184 - 004F0F64 - addi x30, x30, 4
+  188 - 000F21F3 - lw  x3, 0(x30)
+  192 - 004F0F64 - addi x30, x30, 4
+  196 - FFCF0F64 - addi x30, x30, -4
+  200 - 002F2062 - sw x2, 0(x30)
+  204 - FFCF0F64 - addi x30, x30, -4
+  208 - 001F2062 - sw x1, 0(x30)
+  212 - FFCF0F64 - addi x30, x30, -4
+  216 - 003F2062 - sw x3, 0(x30)
+  220 - 000F20F3 - lw  x1, 0(x30)
+  224 - 004F0F64 - addi x30, x30, 4
+  228 - 000F2173 - lw  x2, 0(x30)
+  232 - 004F0F64 - addi x30, x30, 4
+  236 - 002080E6 - add x1, x1, x2
+  240 - FFCF0F64 - addi x30, x30, -4
+  244 - 001F2062 - sw x1, 0(x30)
+  248 - 000F20F3 - lw  x1, 0(x30)
+  252 - 004F2173 - lw  x2, 4(x30)
+  256 - 002F2062 - sw x2, 0(x30)
+  260 - 001F2262 - sw x1, 4(x30)
+  264 - 000F20F3 - lw  x1, 0(x30)
+  268 - 004F0F64 - addi x30, x30, 4
+  272 - 000F2173 - lw  x2, 0(x30)
+  276 - 004F0F64 - addi x30, x30, 4
+  280 - 000F21F3 - lw  x3, 0(x30)
+  284 - 004F0F64 - addi x30, x30, 4
+  288 - FFCF0F64 - addi x30, x30, -4
+  292 - 002F2062 - sw x2, 0(x30)
+  296 - FFCF0F64 - addi x30, x30, -4
+  300 - 001F2062 - sw x1, 0(x30)
+  304 - FFCF0F64 - addi x30, x30, -4
+  308 - 003F2062 - sw x3, 0(x30)
+  312 - 000F20F3 - lw  x1, 0(x30)
+  316 - FFCF0F64 - addi x30, x30, -4
+  320 - 001F2062 - sw x1, 0(x30)
+  324 - 000F20F3 - lw  x1, 0(x30)
+  328 - 004F0F64 - addi x30, x30, 4
+  332 - 000F2173 - lw  x2, 0(x30)
+  336 - 004F0F64 - addi x30, x30, 4
+  340 - 000F21F3 - lw  x3, 0(x30)
+  344 - 004F0F64 - addi x30, x30, 4
+  348 - FFCF0F64 - addi x30, x30, -4
+  352 - 002F2062 - sw x2, 0(x30)
+  356 - FFCF0F64 - addi x30, x30, -4
+  360 - 001F2062 - sw x1, 0(x30)
+  364 - FFCF0F64 - addi x30, x30, -4
+  368 - 003F2062 - sw x3, 0(x30)
+  372 - 000F20F3 - lw  x1, 0(x30)
+  376 - 004F0F64 - addi x30, x30, 4
+  380 - 000F2173 - lw  x2, 0(x30)
+  384 - 004F0F64 - addi x30, x30, 4
+  388 - 002080E6 - add x1, x1, x2
+  392 - FFCF0F64 - addi x30, x30, -4
+  396 - 001F2062 - sw x1, 0(x30)
+  400 - 000F20F3 - lw  x1, 0(x30)
+  404 - FFCF0F64 - addi x30, x30, -4
+  408 - 001F2062 - sw x1, 0(x30)
+  412 - 000F20F3 - lw  x1, 0(x30)
+  416 - 004F0F64 - addi x30, x30, 4
+  420 - 000F2173 - lw  x2, 0(x30)
+  424 - 004F0F64 - addi x30, x30, 4
+  428 - 000F21F3 - lw  x3, 0(x30)
+  432 - 004F0F64 - addi x30, x30, 4
+  436 - FFCF0F64 - addi x30, x30, -4
+  440 - 002F2062 - sw x2, 0(x30)
+  444 - FFCF0F64 - addi x30, x30, -4
+  448 - 001F2062 - sw x1, 0(x30)
+  452 - FFCF0F64 - addi x30, x30, -4
+  456 - 003F2062 - sw x3, 0(x30)
+  460 - 000F2173 - lw  x2, 0(x30)
+  464 - 004F0F64 - addi x30, x30, 4
+  468 - 000F20F3 - lw  x1, 0(x30)
+  472 - 004F0F64 - addi x30, x30, 4
+  476 - 0020E0E6 - sltu x1, x1, x2
+  480 - FFCF0F64 - addi x30, x30, -4
+  484 - 001F2062 - sw x1, 0(x30)
+  488 - 000F20F3 - lw  x1, 0(x30)
+  492 - 004F0F64 - addi x30, x30, 4
+  496 - 000F2173 - lw  x2, 0(x30)
+  500 - 004F0F64 - addi x30, x30, 4
+  504 - 000F21F3 - lw  x3, 0(x30)
+  508 - 004F0F64 - addi x30, x30, 4
+  512 - FFCF0F64 - addi x30, x30, -4
+  516 - 002F2062 - sw x2, 0(x30)
+  520 - FFCF0F64 - addi x30, x30, -4
+  524 - 001F2062 - sw x1, 0(x30)
+  528 - FFCF0F64 - addi x30, x30, -4
+  532 - 003F2062 - sw x3, 0(x30)
+  536 - 000F20F3 - lw  x1, 0(x30)
+  540 - 004F0F64 - addi x30, x30, 4
+  544 - 000F2173 - lw  x2, 0(x30)
+  548 - 004F0F64 - addi x30, x30, 4
+  552 - 002080E6 - add x1, x1, x2
+  556 - FFCF0F64 - addi x30, x30, -4
+  560 - 001F2062 - sw x1, 0(x30)
+  564 - 000FA0F3 - lw  x1, 0(x31)
+  568 - 004F8FE4 - addi x31, x31, 4
+  572 - 00008178 - jalr x2, x1, 0
+  576 - FFFFF080 - lui x1, 0xfffff
+  580 - 00C080E0 - slli x1, x1, 12
+  584 - 00FFF100 - lui x2, 0xfff
+  588 - 002080E6 - add x1, x1, x2
+  592 - FFCF0F64 - addi x30, x30, -4
+  596 - 001F2062 - sw x1, 0(x30)
+  600 - 00000080 - lui x1, 0x0
+  604 - 00C080E0 - slli x1, x1, 12
+  608 - 00001100 - lui x2, 0x1
+  612 - 002080E6 - add x1, x1, x2
+  616 - FFCF0F64 - addi x30, x30, -4
+  620 - 001F2062 - sw x1, 0(x30)
+  624 - 00000080 - lui x1, 0x0
+  628 - 00C080E0 - slli x1, x1, 12
+  632 - 00002100 - lui x2, 0x2
+  636 - 002080E6 - add x1, x1, x2
+  640 - FFCF0F64 - addi x30, x30, -4
+  644 - 001F2062 - sw x1, 0(x30)
+  648 - 00000080 - lui x1, 0x0
+  652 - 00C080E0 - slli x1, x1, 12
+  656 - 00001100 - lui x2, 0x1
+  660 - 002080E6 - add x1, x1, x2
+  664 - FFCF0F64 - addi x30, x30, -4
+  668 - 001F2062 - sw x1, 0(x30)
+  672 - FFE040FB - jal x1, 1048068
+  676 - 000F20F3 - lw  x1, 0(x30)
+  680 - 004F0F64 - addi x30, x30, 4
+  684 - 00008041 - print_word x0 x1
+  688 - 000F20F3 - lw  x1, 0(x30)
+  692 - 004F0F64 - addi x30, x30, 4
+  696 - 00008041 - print_word x0 x1
+  700 - 0000007F - halt
+out_stdout: |2+
+
+out_log: |2
+
+  === TICK 0 ===
+  ===========EXECUTE===========
+  READY: []
+
+  === TICK 8 ===
+  ===========EXECUTE===========
+  READY: [0, 2]
+  EXEC: rob_tag=0 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[1, 1, 1] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 576
+  EXEC: rob_tag=2 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[1, 1, 1] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 584
+
+  === TICK 16 ===
+  ===========EXECUTE===========
+  READY: [0, 1, 4]
+  EXEC: rob_tag=4 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 592
+  EXEC: rob_tag=1 opcode=[0, 0, 0, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 580
+  EXEC: rob_tag=6 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 600
+
+  === TICK 24 ===
+  ===========EXECUTE===========
+  READY: [0, 3, 5]
+  EXEC: rob_tag=0 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[1, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 608
+  EXEC: rob_tag=3 opcode=[0, 1, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 588
+  EXEC: rob_tag=7 opcode=[0, 0, 0, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 604
+
+  === TICK 31 ===
+  ===========EXECUTE===========
+  READY: [1, 2, 3, 4]
+  EXEC: rob_tag=1 opcode=[0, 1, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 612
+  EXEC: rob_tag=5 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 596
+  EXEC: rob_tag=4 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 624
+  EXEC: rob_tag=2 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 616
+
+  === TICK 44 ===
+  ===========EXECUTE===========
+  READY: [0, 2, 4]
+  EXEC: rob_tag=3 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 620
+  EXEC: rob_tag=6 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 632
+  EXEC: rob_tag=0 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 640
+
+  === TICK 53 ===
+  ===========EXECUTE===========
+  READY: [1, 2, 5]
+  EXEC: rob_tag=5 opcode=[0, 0, 0, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 628
+  EXEC: rob_tag=2 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 648
+  EXEC: rob_tag=4 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[1, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 656
+
+  === TICK 60 ===
+  ===========EXECUTE===========
+  READY: [3, 4]
+  EXEC: rob_tag=7 opcode=[0, 1, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 636
+  EXEC: rob_tag=3 opcode=[0, 0, 0, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 652
+
+  === TICK 67 ===
+  ===========EXECUTE===========
+  READY: [0, 2, 4]
+  EXEC: rob_tag=1 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 644
+  EXEC: rob_tag=6 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 664
+  EXEC: rob_tag=0 opcode=[1, 1, 0, 1, 1, 1, 1] funct3=[0, 0, 1] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 672
+
+  === TICK 78 ===
+  ===========EXECUTE===========
+  READY: [1]
+  EXEC: rob_tag=5 opcode=[0, 1, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 660
+
+  === TICK 85 ===
+  ===========EXECUTE===========
+  READY: [2, 3]
+  EXEC: rob_tag=2 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 680
+  EXEC: rob_tag=7 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 668
+
+  === TICK 94 ===
+  ===========EXECUTE===========
+  READY: [0, 2, 3]
+  EXEC: rob_tag=0 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 164
+  EXEC: rob_tag=2 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 172
+  EXEC: rob_tag=3 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 176
+
+  === TICK 102 ===
+  ===========EXECUTE===========
+  READY: [1]
+  EXEC: rob_tag=1 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 168
+
+  === TICK 112 ===
+  ===========EXECUTE===========
+  READY: [0, 2]
+  EXEC: rob_tag=4 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 180
+  EXEC: rob_tag=5 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 184
+
+  === TICK 119 ===
+  ===========EXECUTE===========
+  READY: [3, 4]
+  EXEC: rob_tag=6 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 188
+  EXEC: rob_tag=7 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 192
+
+  === TICK 126 ===
+  ===========EXECUTE===========
+  READY: [1]
+  EXEC: rob_tag=0 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 196
+
+  === TICK 131 ===
+  ===========EXECUTE===========
+  READY: [5, 6]
+  EXEC: rob_tag=1 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 200
+  EXEC: rob_tag=2 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 204
+
+  === TICK 138 ===
+  ===========EXECUTE===========
+  READY: [0, 7]
+  EXEC: rob_tag=4 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 212
+  EXEC: rob_tag=3 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 208
+
+  === TICK 145 ===
+  ===========EXECUTE===========
+  READY: [2, 4]
+  EXEC: rob_tag=5 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 216
+  EXEC: rob_tag=7 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 224
+
+  === TICK 150 ===
+  ===========EXECUTE===========
+  READY: [3, 5]
+  EXEC: rob_tag=6 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 220
+  EXEC: rob_tag=1 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 232
+
+  === TICK 157 ===
+  ===========EXECUTE===========
+  READY: [0, 1]
+  EXEC: rob_tag=3 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 240
+  EXEC: rob_tag=0 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 228
+
+  === TICK 164 ===
+  ===========EXECUTE===========
+  READY: [6]
+  EXEC: rob_tag=2 opcode=[0, 1, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 236
+
+  === TICK 171 ===
+  ===========EXECUTE===========
+  READY: [5, 7]
+  EXEC: rob_tag=2 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 268
+  EXEC: rob_tag=4 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 244
+
+  === TICK 176 ===
+  ===========EXECUTE===========
+  READY: [2]
+  EXEC: rob_tag=5 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 248
+
+  === TICK 181 ===
+  ===========EXECUTE===========
+  READY: [3]
+  EXEC: rob_tag=6 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 252
+
+  === TICK 186 ===
+  ===========EXECUTE===========
+  READY: [4]
+  EXEC: rob_tag=7 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 256
+
+  === TICK 191 ===
+  ===========EXECUTE===========
+  READY: [0]
+  EXEC: rob_tag=0 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 260
+
+  === TICK 196 ===
+  ===========EXECUTE===========
+  READY: [1]
+  EXEC: rob_tag=1 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 264
+
+  === TICK 203 ===
+  ===========EXECUTE===========
+  READY: [5, 6]
+  EXEC: rob_tag=4 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 276
+  EXEC: rob_tag=3 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 272
+
+  === TICK 210 ===
+  ===========EXECUTE===========
+  READY: [2, 3]
+  EXEC: rob_tag=5 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 280
+  EXEC: rob_tag=6 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 284
+
+  === TICK 217 ===
+  ===========EXECUTE===========
+  READY: [4]
+  EXEC: rob_tag=7 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 288
+
+  === TICK 222 ===
+  ===========EXECUTE===========
+  READY: [0, 1]
+  EXEC: rob_tag=0 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 292
+  EXEC: rob_tag=1 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 296
+
+  === TICK 229 ===
+  ===========EXECUTE===========
+  READY: [5, 7]
+  EXEC: rob_tag=3 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 304
+  EXEC: rob_tag=2 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 300
+
+  === TICK 236 ===
+  ===========EXECUTE===========
+  READY: [3, 6]
+  EXEC: rob_tag=6 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 316
+  EXEC: rob_tag=4 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 308
+
+  === TICK 241 ===
+  ===========EXECUTE===========
+  READY: [1, 2]
+  EXEC: rob_tag=1 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 328
+  EXEC: rob_tag=5 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 312
+
+  === TICK 248 ===
+  ===========EXECUTE===========
+  READY: [4, 7]
+  EXEC: rob_tag=7 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 320
+  EXEC: rob_tag=3 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 336
+
+  === TICK 253 ===
+  ===========EXECUTE===========
+  READY: [0, 1]
+  EXEC: rob_tag=0 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 324
+  EXEC: rob_tag=5 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 344
+
+  === TICK 260 ===
+  ===========EXECUTE===========
+  READY: [2, 5]
+  EXEC: rob_tag=6 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 348
+  EXEC: rob_tag=2 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 332
+
+  === TICK 267 ===
+  ===========EXECUTE===========
+  READY: [0, 3]
+  EXEC: rob_tag=0 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 356
+  EXEC: rob_tag=4 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 340
+
+  === TICK 276 ===
+  ===========EXECUTE===========
+  READY: [2, 4]
+  EXEC: rob_tag=2 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 364
+  EXEC: rob_tag=7 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 352
+
+  === TICK 283 ===
+  ===========EXECUTE===========
+  READY: [1, 3]
+  EXEC: rob_tag=1 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 360
+  EXEC: rob_tag=5 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 376
+
+  === TICK 290 ===
+  ===========EXECUTE===========
+  READY: [2, 5]
+  EXEC: rob_tag=7 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 384
+  EXEC: rob_tag=3 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 368
+
+  === TICK 295 ===
+  ===========EXECUTE===========
+  READY: [0, 1]
+  EXEC: rob_tag=4 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 372
+  EXEC: rob_tag=1 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 392
+
+  === TICK 302 ===
+  ===========EXECUTE===========
+  READY: [6]
+  EXEC: rob_tag=6 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 380
+
+  === TICK 309 ===
+  ===========EXECUTE===========
+  READY: [4]
+  EXEC: rob_tag=0 opcode=[0, 1, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 388
+
+  === TICK 316 ===
+  ===========EXECUTE===========
+  READY: [0, 3]
+  EXEC: rob_tag=4 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 404
+  EXEC: rob_tag=2 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 396
+
+  === TICK 321 ===
+  ===========EXECUTE===========
+  READY: [2, 6]
+  EXEC: rob_tag=3 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 400
+  EXEC: rob_tag=7 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 416
+
+  === TICK 328 ===
+  ===========EXECUTE===========
+  READY: [1, 7]
+  EXEC: rob_tag=5 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 408
+  EXEC: rob_tag=1 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 424
+
+  === TICK 333 ===
+  ===========EXECUTE===========
+  READY: [2, 5]
+  EXEC: rob_tag=3 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 432
+  EXEC: rob_tag=6 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 412
+
+  === TICK 340 ===
+  ===========EXECUTE===========
+  READY: [3, 4]
+  EXEC: rob_tag=4 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 436
+  EXEC: rob_tag=0 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 420
+
+  === TICK 347 ===
+  ===========EXECUTE===========
+  READY: [0, 2]
+  EXEC: rob_tag=2 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 428
+  EXEC: rob_tag=6 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 444
+
+  === TICK 356 ===
+  ===========EXECUTE===========
+  READY: [1, 3]
+  EXEC: rob_tag=5 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 440
+  EXEC: rob_tag=0 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 452
+
+  === TICK 363 ===
+  ===========EXECUTE===========
+  READY: [2, 5]
+  EXEC: rob_tag=3 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 464
+  EXEC: rob_tag=7 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 448
+
+  === TICK 370 ===
+  ===========EXECUTE===========
+  READY: [1, 4]
+  EXEC: rob_tag=5 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 472
+  EXEC: rob_tag=1 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 456
+
+  === TICK 375 ===
+  ===========EXECUTE===========
+  READY: [0, 2]
+  EXEC: rob_tag=2 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 460
+  EXEC: rob_tag=7 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 480
+
+  === TICK 382 ===
+  ===========EXECUTE===========
+  READY: [6]
+  EXEC: rob_tag=4 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 468
+
+  === TICK 389 ===
+  ===========EXECUTE===========
+  READY: [3]
+  EXEC: rob_tag=6 opcode=[0, 1, 1, 0, 0, 1, 1] funct3=[0, 1, 1] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 476
+
+  === TICK 396 ===
+  ===========EXECUTE===========
+  READY: [0, 5]
+  EXEC: rob_tag=2 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 492
+  EXEC: rob_tag=0 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 484
+
+  === TICK 401 ===
+  ===========EXECUTE===========
+  READY: [1, 4]
+  EXEC: rob_tag=1 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 488
+  EXEC: rob_tag=4 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 500
+
+  === TICK 408 ===
+  ===========EXECUTE===========
+  READY: [2, 3]
+  EXEC: rob_tag=3 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 496
+  EXEC: rob_tag=6 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 508
+
+  === TICK 415 ===
+  ===========EXECUTE===========
+  READY: [6, 7]
+  EXEC: rob_tag=5 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 504
+  EXEC: rob_tag=7 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 512
+
+  === TICK 424 ===
+  ===========EXECUTE===========
+  READY: [0, 1]
+  EXEC: rob_tag=0 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 516
+  EXEC: rob_tag=1 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 520
+
+  === TICK 431 ===
+  ===========EXECUTE===========
+  READY: [2, 4]
+  EXEC: rob_tag=3 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 528
+  EXEC: rob_tag=2 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 524
+
+  === TICK 438 ===
+  ===========EXECUTE===========
+  READY: [3, 6]
+  EXEC: rob_tag=4 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 532
+  EXEC: rob_tag=6 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 540
+
+  === TICK 443 ===
+  ===========EXECUTE===========
+  READY: [0, 3]
+  EXEC: rob_tag=0 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 548
+  EXEC: rob_tag=4 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 564
+
+  === TICK 448 ===
+  ===========EXECUTE===========
+  READY: [2, 5]
+  EXEC: rob_tag=2 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 556
+  EXEC: rob_tag=5 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 536
+
+  === TICK 455 ===
+  ===========EXECUTE===========
+  READY: [0, 7]
+  EXEC: rob_tag=5 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 568
+  EXEC: rob_tag=7 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 544
+
+  === TICK 462 ===
+  ===========EXECUTE===========
+  READY: [0, 1]
+  EXEC: rob_tag=7 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[1, 1, 1] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 576
+  EXEC: rob_tag=1 opcode=[0, 1, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 552
+
+  === TICK 469 ===
+  ===========EXECUTE===========
+  READY: [0, 3, 4]
+  EXEC: rob_tag=1 opcode=[0, 0, 0, 0, 0, 0, 0] funct3=[1, 1, 1] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 584
+  EXEC: rob_tag=0 opcode=[0, 0, 0, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 580
+  EXEC: rob_tag=3 opcode=[0, 1, 0, 0, 0, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 560
+
+  === TICK 478 ===
+  ===========EXECUTE===========
+  READY: [0, 1, 2, 4]
+  EXEC: rob_tag=3 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[1, 1, 1, 1, 1, 1, 1] pc = 592
+  EXEC: rob_tag=2 opcode=[0, 1, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 588
+  EXEC: rob_tag=6 opcode=[0, 0, 0, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 572
+
+  === TICK 486 ===
+  ===========EXECUTE===========
+  READY: [0, 1]
+  EXEC: rob_tag=0 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 676
+  EXEC: rob_tag=1 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 680
+
+  === TICK 495 ===
+  ===========EXECUTE===========
+  READY: [0, 2, 4, 5]
+  EXEC: rob_tag=4 opcode=[0, 0, 1, 0, 0, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 692
+  EXEC: rob_tag=2 opcode=[1, 0, 0, 0, 0, 0, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 684
+  EXEC: rob_tag=6 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 700
+  EXEC: rob_tag=7 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 704
+
+  === TICK 502 ===
+  ===========EXECUTE===========
+  READY: [0, 2, 3, 4]
+  EXEC: rob_tag=0 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 708
+  EXEC: rob_tag=1 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 712
+  EXEC: rob_tag=3 opcode=[1, 1, 0, 0, 1, 1, 1] funct3=[0, 1, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 688
+  EXEC: rob_tag=2 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 716
+
+  === TICK 509 ===
+  ===========EXECUTE===========
+  READY: [0, 1, 2]
+  EXEC: rob_tag=3 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 720
+  EXEC: rob_tag=5 opcode=[1, 0, 0, 0, 0, 0, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 696
+  EXEC: rob_tag=4 opcode=[1, 1, 1, 1, 1, 1, 1] funct3=[0, 0, 0] funct7=[0, 0, 0, 0, 0, 0, 0] pc = 724
+  COMMIT: HALT FLAG SET pc=700
+  TICKS 511
+  ==========OUTPUT==========
+  3
+  1

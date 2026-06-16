@@ -1228,11 +1228,11 @@ class ForthCompiler:
 
         if opcode == 0x41:
             if funct3 == 0x04:
-                return f"print x{rd}"
+                return f"print x{rd} x{rs1}"
             elif funct3 == 0x00:
-                return f"print_word x{rd}"
+                return f"print_word x{rd} x{rs1}"
         if opcode == 0x40 and funct3 == 0x04:
-            return f"input x{rd}"
+            return f"input x{rd} x{rs1}"
         if opcode == 0x7F and (instr >> 7) == 0:
             return "halt"
 
@@ -1263,7 +1263,7 @@ class ForthCompiler:
             if funct3 == 0x05:
                 if funct7 == 0x00:
                     return f"srl x{rd}, x{rs1}, x{rs2}"
-                if funct3 == 0x02:
+                if funct7 == 0x02:
                     return f"sra x{rd}, x{rs1}, x{rs2}"
             if funct3 == 0x06 and funct7 == 0x00:
                 return f"sltu x{rd}, x{rs1}, x{rs2}"

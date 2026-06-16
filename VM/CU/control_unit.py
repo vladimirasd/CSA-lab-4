@@ -1,6 +1,3 @@
-import threading
-
-
 class CU:
     def __init__(
         self,
@@ -27,6 +24,7 @@ class CU:
         rob,
         rs,
         log_file=None,
+        log_level = 3
     ):
         self._registers = registers
         self._dr = dr
@@ -50,7 +48,6 @@ class CU:
         self._clock = 0
         self._inputs = inputs
         self._outputs = outputs
-        self._print_lock = threading.Lock()
         self._in_trap = False
         self._pre_trap = False
         self._rob = rob
@@ -65,61 +62,66 @@ class CU:
         self._i_for_issue = 0
         self._to_trap_state = 0
         self.log_file = log_file
+        self.log_level = log_level
 
+
+    def log(self, str, log_level):
+        if(self.log_level >= log_level):
+            print(str, file=self.log_file)
     def handle_interrupts(self):
-        print("===========INTER===========", file=self.log_file)
+        self.log("===========INTER===========", 3)
         self._state = 0
 
         for input_name in self._inputs:
             inpt = self._inputs[input_name]
             if inpt.is_active(self._clock):
-                print(input_name, "IS ACTIVE", file=self.log_file)
+                self.log(f"{input_name} IS ACTIVE", 3)
                 if self._in_trap:
-                    print("BUT ALREADY IN TRAP", file=self.log_file)
+                    self.log("BUT ALREADY IN TRAP", 3)
                 else:
                     self._pre_trap = True
                     if self._rob.free_slots() == 8 and self._rs.free_slots() == 8:
                         self._state = 4
                         if self._to_trap_state == 0:
-                            print(
-                                "PC BEFORE TRAP", self.to_int(self._pc._value), file=self.log_file
+                            self.log(
+                                f"PC BEFORE TRAP {self.to_int(self._pc._value)}", 3
                             )
-                            print(self._alu1._left.set("x31"), file=self.log_file)
-                            print(self._alu1.decrement(), file=self.log_file)
+                            self.log(self._alu1._left.set("x31"), 3)
+                            self.log(self._alu1.decrement(), 3)
                             self._to_trap_state += 1
 
                         elif self._to_trap_state == 1:
-                            print(self._registers["x31"].set(self._alu1._name), file=self.log_file)
-                            print(self._alu1._left.set("x31"), file=self.log_file)
-                            print(self._alu1.pass_value(), file=self.log_file)
-                            print(self._ar.set(self._alu1._name), file=self.log_file)
-                            print(self._alu1._left.set(self._pc._name), file=self.log_file)
-                            print(self._alu1.pass_value(), file=self.log_file)
-                            print(self._dr.set(self._alu1._name), file=self.log_file)
-                            print(self._mem.set(), file=self.log_file)
+                            self.log(self._registers["x31"].set(self._alu1._name), 3)
+                            self.log(self._alu1._left.set("x31"), 3)
+                            self.log(self._alu1.pass_value(), 3)
+                            self.log(self._ar.set(self._alu1._name), 3)
+                            self.log(self._alu1._left.set(self._pc._name), 3)
+                            self.log(self._alu1.pass_value(), 3)
+                            self.log(self._dr.set(self._alu1._name),3)
+                            self.log(self._mem.set(), 3)
                             self._to_trap_state += 1
 
                         elif self._to_trap_state == 2:
-                            print(self._dr.set_interrupt_vector(inpt._name), file=self.log_file)
-                            print(self._alu1._left.set(self._dr._name), file=self.log_file)
-                            print(self._alu1.pass_value(), file=self.log_file)
-                            print(self._ar.set(self._alu1._name), file=self.log_file)
-                            print(self._dr.set("mem"), file=self.log_file)
+                            self.log(self._dr.set_interrupt_vector(inpt._name), 3)
+                            self.log(self._alu1._left.set(self._dr._name), 3)
+                            self.log(self._alu1.pass_value(), 3)
+                            self.log(self._ar.set(self._alu1._name), 3)
+                            self.log(self._dr.set("mem"), 3)
                             self._to_trap_state += 1
                         elif self._to_trap_state == 3:
-                            print(self._alu1._left.set(self._dr._name), file=self.log_file)
-                            print(self._alu1.pass_value(), file=self.log_file)
-                            print(self._pc.set(self._alu1._name), file=self.log_file)
-                            print("current pc :", self.to_int(self._pc._value), file=self.log_file)
+                            self.log(self._alu1._left.set(self._dr._name), 3)
+                            self.log(self._alu1.pass_value(), 3)
+                            self.log(self._pc.set(self._alu1._name), 3)
+                            self.log(f"current pc :{self.to_int(self._pc._value)}", 3)
                             self._in_trap = True
                             self._pre_trap = False
                             self._to_trap_state = 0
                             self._to_trap_state = 0
                             self._state = 0
                     else:
-                        print(
+                        self.log(
                             "BUT CANT GO IN TRAP : NOT ALL INST EXECUTED AND COMMITED",
-                            file=self.log_file,
+                            3,
                         )
                     break
 
@@ -155,46 +157,46 @@ class CU:
         return res
 
     def dump_state(self):
-        print("===========DUMP===========", file=self.log_file)
-        print("ROB:", file=self.log_file)
+        self.log("===========DUMP===========", 3)
+        self.log("ROB:", 3)
         for i, e in enumerate(self._rob._entries):
             if e.valid[0]:
-                print(
+                self.log(
                     f"  [{i}] valid={e.valid[0]} ready={e.ready[0]} dest={self.from_bits_to_name(e.dest_reg)} value={self.to_int(e.value)} is_halt={e.is_halt[0]} is_store={e.is_store[0]} pc = {self.to_int(e.pc)}",
-                    file=self.log_file,
+                    3,
                 )
-        print("RS:", file=self.log_file)
+        self.log("RS:", 3)
         for i, e in enumerate(self._rs._entries):
             if e.valid[0]:
-                print(
+                self.log(
                     f"  [{i}] valid={e.valid[0]} op1_ready={e.op1_ready[0]} op1_tag={e.op1_tag} op2_ready={e.op2_ready[0]}  op2_tag={e.op2_tag}  is_mem={e.is_memory[0]} mem_rd{e.mem_ready} mem_tag={e.mem_tag} pc = {self.to_int(e.pc)}",
-                    file=self.log_file,
+                    3,
                 )
         for reg in self._registers:
             if reg in ["x1", "x2", "x3", "x4", "x5", "x30", "x31"]:
-                print(
+                self.log(
                     f" reg : {self._registers[reg]._name} state : {self.to_int(self._registers[reg].get())} = {(self._registers[reg].get())}",
-                    file=self.log_file,
+                    3,
                 )
-        print(
+        self.log(
             f"mem[x30]={self.to_int(self._mem.get_dump(self.to_int(self._registers['x30'].get())))}",
-            file=self.log_file,
+            3,
         )
-        print(
+        self.log(
             f"mem[x30 + 4]={self.to_int(self._mem.get_dump(self.to_int(self._registers['x30'].get()) + 4))}",
-            file=self.log_file,
+            3,
         )
-        print(
+        self.log(
             f"mem[x31]={self.to_int(self._mem.get_dump(self.to_int(self._registers['x31'].get())))}",
-            file=self.log_file,
+            3,
         )
-        print(
+        self.log(
             f"mem[x31 + 4]={self.to_int(self._mem.get_dump(self.to_int(self._registers['x31'].get()) + 4))}",
-            file=self.log_file,
+            3,
         )
 
     def flush(self):
-        print("===========FLUSH===========", file=self.log_file)
+        self.log("===========FLUSH===========", 3)
         self._rs.flush()
         self._rob.flush()
         self.rename = {
@@ -205,28 +207,29 @@ class CU:
         }
 
     def commit(self):
-        print("===========COMMIT===========", file=self.log_file)
+        self.log("===========COMMIT===========", 3)
         if self._rob.get_head().ready[0] and self._rob.get_head().valid[0]:
             head = self._rob.get_head()
 
             if head.is_halt[0]:
-                print(f"COMMIT: HALT FLAG SET pc={self.to_int(head.pc)}", file=self.log_file)
+                self.log(f"COMMIT: HALT FLAG SET pc={self.to_int(head.pc)}", 0)
+                self.log(f"TICKS {self._clock}", 0)
                 raise ValueError("HALT")
 
             if head.is_store[0] and not head.is_halt[0]:
-                print(
+                self.log(
                     f"COMMIT: store addr={self.to_int(head.store_addr)} data={self.to_int(head.store_data)}={(head.store_data)} pc={self.to_int(head.pc)} ",
-                    file=self.log_file,
+                    3,
                 )
             elif head.is_mem[0] and not head.is_halt[0]:
-                print(
+                self.log(
                     f"COMMIT: load reg {self.from_bits_to_name(head.dest_reg)} value={self.to_int(head.value)}={head.value} pc={self.to_int(head.pc)} ",
-                    file=self.log_file,
+                    3,
                 )
             elif head.manage == [0, 0, 0] and not head.is_halt[0]:
-                print(
+                self.log(
                     f"COMMIT: reg {self.from_bits_to_name(head.dest_reg)} value={self.to_int(head.value)}={head.value} pc={self.to_int(head.pc)}",
-                    file=self.log_file,
+                    3,
                 )
 
             if self._rob.get_head().is_store[0]:
@@ -288,23 +291,23 @@ class CU:
                     if head.value[0] == 1:
                         self._pc._value = head.pc
                         self._pc.increment(head.store_data)
-                    print(
+                    self.log(
                         f"COMMIT: branch pc={self.to_int(self._pc.get())} data={self.to_int(head.value)} pc={self.to_int(head.pc)} ",
-                        file=self.log_file,
+                        3,
                     )
                     if head.value[0] == 1:
                         self.flush()
                 elif head.manage == [0, 1, 0]:  # jal
                     self._pc._value = head.pc
                     self._pc.increment(head.store_data)
-                    print(f"COMMIT: jal pc={self.to_int(self._pc.get())}", file=self.log_file)
+                    self.log(f"COMMIT: jal pc={self.to_int(self._pc.get())}", 3)
                     self.flush()
                 elif head.manage == [1, 1, 0]:  # jalr
-                    print(f"COMMIT: jalr pc={self.to_int(head.store_data)}", file=self.log_file)
+                    self.log(f"COMMIT: jalr pc={self.to_int(head.store_data)}", 3)
                     self._pc._value = head.store_data
                     self.flush()
                 elif head.manage == [0, 0, 1]:  # jalri
-                    print(f"COMMIT: jalri pc={self.to_int(head.store_data)} ", file=self.log_file)
+                    self.log(f"COMMIT: jalri pc={self.to_int(head.store_data)} ", 3)
                     self._pc._value = head.store_data
                     self._in_trap = False
                     self.flush()
@@ -313,7 +316,7 @@ class CU:
             self._state += 1
 
     def issue(self):
-        print("===========ISSUE===========", file=self.log_file)
+        self.log("===========ISSUE===========", 3)
         if not self._pre_trap:
             data = [
                 [self._ir1, self._imm1],
@@ -503,9 +506,9 @@ class CU:
                     is_store=is_store,
                 )
 
-                print(
+                self.log(
                     f"ISSUE: pc={self.to_int(pc)} opcode={opcode} rd={self.to_int(rd)} rs1={self.to_int(rs1) if rs1 else None} op1_ready={op1_ready} op1_tag={op1_tag} rs2={self.to_int(rs2) if rs2 else None} op2_ready={op2_ready} op2_tag={op2_tag} rob_tag={self.to_int(rob_tag)} is_halt={is_halt[0]}",
-                    file=self.log_file,
+                    3,
                 )
 
             if self._rob.free_slots() == 0 or self._rs.free_slots() == 0 or self._i_for_issue >= 4:
@@ -516,13 +519,13 @@ class CU:
             self._i_for_issue = 0
 
     def execute(self):
-        print("===========EXECUTE===========", file=self.log_file)
+        self.log("===========EXECUTE===========", 2)
 
         self._state += 1
 
         ready_indices = self._rs.get_ready_indices(max_count=4, mem_once=True)
 
-        print("READY:", ready_indices, file=self.log_file)
+        self.log(f"READY: {ready_indices}", 2)
         alus = [self._alu1, self._alu2, self._alu3, self._alu4]
         it = iter(alus)
         for idx in ready_indices:
@@ -532,9 +535,9 @@ class CU:
             funct3 = e.funct3
             funct7 = e.funct7
             alu = next(it)
-            print(
+            self.log(
                 f"EXEC: rob_tag={self.to_int(e.rob_tag)} opcode={opcode} funct3={funct3} funct7={funct7} pc = {self.to_int(e.pc)}",
-                file=self.log_file,
+                2,
             )
             if opcode == [0, 1, 1, 0, 0, 1, 1]:  # R-type
                 alu._left.set_op1_val(idx)
@@ -758,31 +761,34 @@ class CU:
                     rob_idx = self.to_int(e.rob_tag)
                     self._rob._entries[rob_idx].ready[0] = 1
                     self._rob._entries[rob_idx].is_halt[0] = 1
-                    print("HALT DETECTED", file=self.log_file)
+                    self.log("HALT DETECTED", 3)
                     self._rs.clear_entry(idx, self.log_file)
 
     def fetch_next(self):
-        print("===========FETCH===========", file=self.log_file)
+        self.log("===========FETCH===========", 3)
         if not self._pre_trap:
-            print(
+            self.log(
                 f"ROB SLOTS={self._rob.free_slots()}, RS SLOTS={self._rs.free_slots()}",
-                file=self.log_file,
+                3,
             )
             self._ar.set("pc")
             self._ir1.set("mem", 0)
             self._ir2.set("mem", 1)
             self._ir3.set("mem", 2)
             self._ir4.set("mem", 3)
-            print("IR 1: ", self._ir1.get(), file=self.log_file)
-            print("IR 2: ", self._ir2.get(), file=self.log_file)
-            print("IR 3: ", self._ir3.get(), file=self.log_file)
-            print("IR 4: ", self._ir4.get(), file=self.log_file)
+            self.log(f"IR 1: {self._ir1.get()}", 3)
+            self.log(f"IR 2: {self._ir2.get()}", 3)
+            self.log(f"IR 3: {self._ir3.get()}", 3)
+            self.log(f"IR 4: {self._ir4.get()}", 3)
 
         self._state += 1
 
     def tick(self):
-        print(f"\n=== TICK {self._clock} ===", file=self.log_file)
+        if self._state != 0:
+            self.log(f"\n=== TICK {self._clock} ===", 3)
+
         if self._state == 0:
+            self.log(f"\n=== TICK {self._clock} ===", 2)
             self.dump_state()
             self.execute()
         elif self._state == 1:
