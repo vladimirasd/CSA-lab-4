@@ -818,7 +818,49 @@ OPCODE FUNCT 3 и 7
 ## RENAME (REG и MEM)
 Таблицы переименований, хранящие последний ROB-тег инструкции, пишущей в этот регистр / в память по этому регистру, а так же готовность регистра. Так разершаются RAW зависимости.
 
+# Тестирование 
+## Разработанные тесты
+### algo2
+Тести из варианта.
+Найти разность суммы квадратом чисел от 1 до 100 и их квадрата суммы
 
+[algo2.yml](tests/golden/algo2.yml)
+
+### cat
+
+Вывести пользовательский ввод
+
+[cat.yml](tests/golden/cat.yml)
+
+### hello
+
+Вывести "Hello, World!"
+
+[hello.yml](tests/golden/hello.yml)
+
+### print_name
+
+Запросить имя пользователя, и поздороваться с ним
+
+[print_name.yml](tests/golden/print_name.yml)
+
+### sort 
+
+Отсортировать массив из ввода 
+
+[sort.yml](tests/golden/sort.yml)
+
+### token
+
+Демонстрация работы execution token
+
+[token.yml](tests/golden/token.yml)
+
+### long
+
+Демонстрация работы c long
+
+[long.yml](tests/golden/long.yml)
 
 
 
